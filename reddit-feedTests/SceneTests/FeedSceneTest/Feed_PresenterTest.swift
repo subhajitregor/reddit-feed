@@ -9,28 +9,41 @@ import XCTest
 @testable import reddit_feed
 
 class Feed_PresenterTest: XCTestCase {
-    let vc = FeedViewControllerSpy()
-    let error = ErrorSpy()
+    var sut: FeedPresenter!
+    var vc: FeedViewControllerSpy!
+    var error: ErrorSpy!
+    
+    // MARK: Lifecycle
+    
+    override func setUp() {
+        super.setUp()
+        vc = FeedViewControllerSpy()
+        sut = FeedPresenter(viewController: vc)
+        error = ErrorSpy()
+    }
+    
+    override func tearDown() {
+        vc = nil
+        error = nil
+        
+        super.tearDown()
+    }
+    
     // MARK: Tests
     
     func test_presenter_IsCallingSuccess() {
-        let sut = makeSUT()
         sut.presentSuccess(response: Feed.Fetch.Response())
         
         XCTAssertEqual(vc.successCount, 1)
     }
     
     func test_presenter_isCallingFailure() {
-        let sut = makeSUT()
         sut.presentFailure(error: error)
         
         XCTAssertEqual(vc.failureCount, 1)
     }
-    // MARK: Helpers
     
-    func makeSUT() -> FeedPresenter {
-        FeedPresenter(viewController: vc)
-    }
+    // MARK: Helpers
     
     struct SomeError: Error {
         

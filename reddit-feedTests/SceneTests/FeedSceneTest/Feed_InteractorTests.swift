@@ -9,15 +9,38 @@ import XCTest
 @testable import reddit_feed
 
 class Feed_InteractorTests: XCTestCase {
-    let presenter = FeedPresentationSpy()
-    let service = FeedServiceSpy()
-    let router = FeedRouterSpy()
-    let error = ErrorSpy()
+    var sut: FeedInteractor!
+    var presenter: FeedPresentationSpy!
+    var service: FeedServiceSpy!
+    var router: FeedRouterSpy!
+    var error: ErrorSpy!
+    
+    // MARK: Lifecycle
+    
+    override func setUp() {
+        super.setUp()
+        
+        presenter = FeedPresentationSpy()
+        service = FeedServiceSpy()
+        router = FeedRouterSpy()
+        sut = FeedInteractor(presenter: presenter,
+                             service: service,
+                             router: router)
+        error = ErrorSpy()
+    }
+    
+    override func tearDown() {
+        presenter = nil
+        service = nil
+        router = nil
+        error = nil
+        
+        super.tearDown()
+    }
     
     // MARK: Tests
     
     func test_fetchAllFeeds_fetchFromService() {
-        let sut = makeSUT()
         sut.fetchAllFeeds(request: Feed.Fetch.Request())
         XCTAssertEqual(service.fetchCount, 1)
 
@@ -26,7 +49,6 @@ class Feed_InteractorTests: XCTestCase {
     }
 
     func test_fetchAllFeeds_onSuccess_SendingToPresenterSuccess() {
-        let sut = makeSUT()
         sut.fetchAllFeeds(request: Feed.Fetch.Request())
         
         service.callback(.success(Feed.Fetch.Response()))
@@ -35,7 +57,6 @@ class Feed_InteractorTests: XCTestCase {
     }
     
     func test_fetchAllFeeds_onFailure_SendingToPresenterFailure() {
-        let sut = makeSUT()
         sut.fetchAllFeeds(request: Feed.Fetch.Request())
         
         service.callback(.failure(error))
@@ -44,7 +65,6 @@ class Feed_InteractorTests: XCTestCase {
     }
     
     func test_routeToDetail() {
-        let sut = makeSUT()
         
         let itemId = 1
         sut.openDetailsView(for: itemId)
@@ -53,12 +73,6 @@ class Feed_InteractorTests: XCTestCase {
     }
     
     // MARK: Helpers
-    
-    func makeSUT() -> FeedInteractor {
-        FeedInteractor(presenter: presenter,
-                       service: service,
-                       router: router)
-    }
     
     class FeedPresentationSpy: FeedPresentationLogic {
         var successCount: Int = 0
