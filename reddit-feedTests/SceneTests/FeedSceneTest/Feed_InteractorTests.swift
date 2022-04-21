@@ -12,6 +12,7 @@ class Feed_InteractorTests: XCTestCase {
     let presenter = FeedPresentationSpy()
     let service = FeedServiceSpy()
     let router = FeedRouterSpy()
+    let error = ErrorSpy()
     
     // MARK: Tests
     
@@ -37,7 +38,7 @@ class Feed_InteractorTests: XCTestCase {
         let sut = makeSUT()
         sut.fetchAllFeeds(request: Feed.Fetch.Request())
         
-        service.callback(.failure(URLError(.timedOut)))
+        service.callback(.failure(error))
         
         XCTAssertEqual(presenter.failureCount, 1)
     }

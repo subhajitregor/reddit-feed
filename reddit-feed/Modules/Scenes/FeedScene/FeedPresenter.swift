@@ -12,7 +12,7 @@ protocol FeedPresentationLogic {
 }
 
 
-class FeedPresenter {
+final class FeedPresenter {
     private weak var viewController: FeedDisplayLogic?
     
     init(viewController: FeedDisplayLogic) {
@@ -29,6 +29,6 @@ extension FeedPresenter: FeedPresentationLogic {
     }
     
     func presentFailure(error: Error) {
-        
+        viewController?.displayFailure(error: error)
     }
 }

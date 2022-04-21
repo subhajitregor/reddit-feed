@@ -8,10 +8,12 @@ import UIKit
 
 protocol FeedDisplayLogic: AnyObject {
     func displaySuccess(viewModel: Feed.ViewModel)
+    func displayFailure(error: Error)
 }
 
-class FeedViewController: UIViewController {
-        
+final class FeedViewController: UIViewController, StoryboardIdentifiable {
+    @IBOutlet private var feedTable: UITableView!
+    
     private var interactor: FeedBusinessLogic?
     
     // MARK: Injection
@@ -24,6 +26,7 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUp()
     }
     
     
@@ -33,5 +36,21 @@ class FeedViewController: UIViewController {
 
 extension FeedViewController: FeedDisplayLogic {
     func displaySuccess(viewModel: Feed.ViewModel) {
+    }
+    
+    func displayFailure(error: Error) {
+        
+    }
+}
+
+// MARK: Private Methods
+
+private extension FeedViewController {
+    func setUp() {
+        setNavigationItem()
+    }
+    
+    func setNavigationItem() {
+        self.title = "Feed"
     }
 }

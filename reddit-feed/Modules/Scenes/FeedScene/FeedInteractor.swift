@@ -19,7 +19,7 @@ protocol FeedRoutingLogic {
 
 protocol FeedDataStore {}
 
-class FeedInteractor {
+final class FeedInteractor {
     private var presenter: FeedPresentationLogic
     private var service: FeedServiceLogic
     private var router: FeedRoutingLogic
