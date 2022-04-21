@@ -27,6 +27,10 @@
 		9FEE24902810FDB7000D5885 /* FeedPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FEE248E2810FDB7000D5885 /* FeedPostTableViewCell.xib */; };
 		9FEE249228113C66000D5885 /* InterfaceIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE249128113C66000D5885 /* InterfaceIdentifiable.swift */; };
 		9FEE249428117A74000D5885 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE249328117A73000D5885 /* UITableView+Extensions.swift */; };
+		9FEE24972811A16A000D5885 /* ServiceRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE24962811A16A000D5885 /* ServiceRequestError.swift */; };
+		9FEE24992811A178000D5885 /* ServiceResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE24982811A178000D5885 /* ServiceResponseError.swift */; };
+		9FEE249B2811A34E000D5885 /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE249A2811A34E000D5885 /* EndpointType.swift */; };
+		9FEE249D2811A6F5000D5885 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE249C2811A6F5000D5885 /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		9FEE248E2810FDB7000D5885 /* FeedPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedPostTableViewCell.xib; sourceTree = "<group>"; };
 		9FEE249128113C66000D5885 /* InterfaceIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceIdentifiable.swift; sourceTree = "<group>"; };
 		9FEE249328117A73000D5885 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		9FEE24962811A16A000D5885 /* ServiceRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequestError.swift; sourceTree = "<group>"; };
+		9FEE24982811A178000D5885 /* ServiceResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResponseError.swift; sourceTree = "<group>"; };
+		9FEE249A2811A34E000D5885 /* EndpointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointType.swift; sourceTree = "<group>"; };
+		9FEE249C2811A6F5000D5885 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,7 @@
 		9FEE243628103B7C000D5885 /* reddit-feedTests */ = {
 			isa = PBXGroup;
 			children = (
+				9FEE249E2811A86C000D5885 /* ServiceTest */,
 				9FEE24872810ECAE000D5885 /* CommonSpy */,
 				9FEE24842810EA8D000D5885 /* SceneTests */,
 			);
@@ -190,6 +199,9 @@
 		9FEE245628103F63000D5885 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				9FEE249A2811A34E000D5885 /* EndpointType.swift */,
+				9FEE249C2811A6F5000D5885 /* Service.swift */,
+				9FEE24952811A0FD000D5885 /* ErrorHandlers */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -308,6 +320,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		9FEE24952811A0FD000D5885 /* ErrorHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				9FEE24962811A16A000D5885 /* ServiceRequestError.swift */,
+				9FEE24982811A178000D5885 /* ServiceResponseError.swift */,
+			);
+			path = ErrorHandlers;
+			sourceTree = "<group>";
+		};
+		9FEE249E2811A86C000D5885 /* ServiceTest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ServiceTest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -410,8 +438,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FEE249B2811A34E000D5885 /* EndpointType.swift in Sources */,
 				9FEE246728104649000D5885 /* FeedPresenter.swift in Sources */,
 				9FEE249228113C66000D5885 /* InterfaceIdentifiable.swift in Sources */,
+				9FEE24972811A16A000D5885 /* ServiceRequestError.swift in Sources */,
 				9FEE246B28104649000D5885 /* FeedViewController.swift in Sources */,
 				9FEE246D28104649000D5885 /* FeedInteractor.swift in Sources */,
 				9FEE248F2810FDB7000D5885 /* FeedPostTableViewCell.swift in Sources */,
@@ -419,6 +449,8 @@
 				9FEE242328103B7A000D5885 /* SceneDelegate.swift in Sources */,
 				9FEE246A28104649000D5885 /* FeedModels.swift in Sources */,
 				9FEE249428117A74000D5885 /* UITableView+Extensions.swift in Sources */,
+				9FEE249D2811A6F5000D5885 /* Service.swift in Sources */,
+				9FEE24992811A178000D5885 /* ServiceResponseError.swift in Sources */,
 				9FEE247A2810DF35000D5885 /* UIStoryboard+Extensions.swift in Sources */,
 				9FEE245B28103FE7000D5885 /* SceneBuilder.swift in Sources */,
 				9FEE245E2810406B000D5885 /* FeedBuilder.swift in Sources */,
