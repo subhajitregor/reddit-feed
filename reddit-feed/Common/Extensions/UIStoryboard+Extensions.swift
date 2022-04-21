@@ -12,9 +12,9 @@ extension UIStoryboard {
         self.init(name: storyboard.rawValue, bundle: bundle)
     }
     
-    func createViewController<VC: UIViewController>() -> VC where VC: StoryboardIdentifiable {
-        guard let viewController = self.instantiateViewController(withIdentifier: VC.storyboardIdentifier) as? VC else {
-            fatalError("Couldn't find view controller with identifier: \(VC.storyboardIdentifier) in Storyboard: \(String(describing: self))")
+    func createViewController<VC: UIViewController>() -> VC where VC: InterfaceIdentifiable {
+        guard let viewController = self.instantiateViewController(withIdentifier: VC.identifier) as? VC else {
+            fatalError("Couldn't find view controller with identifier: \(VC.identifier) in Storyboard: \(String(describing: self))")
         }
         
         return viewController

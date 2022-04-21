@@ -33,5 +33,7 @@ final class FeedRouter: FeedRoutingLogic {
 }
 
 final class FeedService: FeedServiceLogic {
-    func fetchFeeds(completion: @escaping (Result<Feed.Fetch.Response, Error>) -> Void) {}
+    func fetchFeeds(completion: @escaping (Result<Feed.Fetch.Response, Error>) -> Void) {
+        completion(.success(Feed.Fetch.Response()))
+    }
 }

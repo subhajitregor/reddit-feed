@@ -15,5 +15,7 @@ enum Feed {
         struct Response {}
     }
     
-    struct ViewModel {}
+    struct ViewModel {
+        let feedList: [String]
+    }
 }
