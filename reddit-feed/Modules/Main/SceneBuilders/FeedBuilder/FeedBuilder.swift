@@ -32,8 +32,3 @@ final class FeedRouter: FeedRoutingLogic {
     func moveToDetail(with postId: Int) {}
 }
 
-final class FeedService: FeedServiceLogic {
-    func fetchFeeds(completion: @escaping (Result<Feed.Fetch.Response, Error>) -> Void) {
-        completion(.success(Feed.Fetch.Response()))
-    }
-}

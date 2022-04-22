@@ -7,22 +7,28 @@
 
 import Foundation
 
-typealias ServiceCompletion = (Result<Data?, Error>) -> ()
+protocol ServiceResponse {
+    associatedtype Response
+}
+
+extension ServiceResponse {
+    
+}
 
 protocol ServiceCancellable {
     func cancel()
 }
 
 protocol ServiceProtocol {
-    func request(_ route: EndpointType, completion: @escaping ServiceCompletion)
+    func request<Endpoint: EndpointType>(_ route: Endpoint, completion: @escaping (Result<Endpoint.Response, Error>) -> Void)
 }
 
 class Service: NSObject, ServiceProtocol, ServiceCancellable {
     private var task: URLSessionTask?
-    private var completion: ServiceCompletion?
+//    private var completion: (Result<T?, Error>) -> Void = {_ in}
     
-    func request(_ route: EndpointType, completion: @escaping ServiceCompletion) {
-        self.completion = completion
+    func request<Endpoint: EndpointType>(_ route: Endpoint, completion: @escaping (Result<Endpoint.Response, Error>) -> Void) {
+//        self.completion = completion
         
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForResource = 30
@@ -42,7 +48,15 @@ class Service: NSObject, ServiceProtocol, ServiceCancellable {
                 
                 switch responseError {
                 case .none:
-                    completion(.success(data))
+                    guard let data = data else {
+                        return completion(.failure(ServiceResponseError.noData))
+                    }
+
+                    do {
+                        try completion(.success(route.decode(data)))
+                    } catch let decodingError {
+                        completion(.failure(decodingError))
+                    }
                 default:
                     completion(.failure(responseError))
                 }

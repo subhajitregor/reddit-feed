@@ -24,7 +24,8 @@ final class FeedPresenter {
 
 extension FeedPresenter: FeedPresentationLogic {
     func presentSuccess(response: Feed.Fetch.Response) {
-        let viewModel = Feed.ViewModel(feedList: ["A", "B", "C"])
+        let vmList = response.responseList.map { Feed.ViewModel.FeedPostVM(from: $0) }
+        let viewModel = Feed.ViewModel(feedList: vmList)
         viewController?.displaySuccess(viewModel: viewModel)
     }
     

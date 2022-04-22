@@ -12,10 +12,28 @@ enum Feed {
     
     enum Fetch {
         struct Request {}
-        struct Response {}
+        struct Response {
+            let responseList: [RedditFeed.FeedPost]
+        }
     }
     
     struct ViewModel {
-        let feedList: [String]
+        let feedList: [FeedPostVM]
+    }
+}
+
+extension Feed.ViewModel {
+    final class FeedPostVM {
+        var imageThumbnailUrl: String
+        var originalImageURL: String
+        var title: String
+        var timestamp: String
+        
+        init(from post: RedditFeed.FeedPost) {
+            imageThumbnailUrl = post.thumbnail
+            originalImageURL = post.originalImage
+            title = post.title
+            timestamp = post.createdAt.toString(from: .time_on_mmm_space_dd_comma_yyyy)
+        }
     }
 }

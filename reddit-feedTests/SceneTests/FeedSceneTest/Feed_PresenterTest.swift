@@ -32,7 +32,7 @@ class Feed_PresenterTest: XCTestCase {
     // MARK: Tests
     
     func test_presenter_IsCallingSuccess() {
-        sut.presentSuccess(response: Feed.Fetch.Response())
+        sut.presentSuccess(response: Feed.Fetch.Response(responseList: []))
         
         XCTAssertEqual(vc.successCount, 1)
     }
