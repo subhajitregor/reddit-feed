@@ -51,7 +51,7 @@ class Feed_InteractorTests: XCTestCase {
     func test_fetchAllFeeds_onSuccess_SendingToPresenterSuccess() {
         sut.fetchAllFeeds(request: Feed.Fetch.Request())
         
-        service.callback(.success(Feed.Fetch.Response()))
+        service.callback(.success(Feed.Fetch.Response(responseList: [])))
 
         XCTAssertEqual(presenter.successCount, 1)
     }

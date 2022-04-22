@@ -8,16 +8,35 @@
 import Foundation
 
 public typealias HTTPHeaders = [String:String]
-
-protocol EndpointType {
-    var baseURL: String { get }
-    var path: String { get }
-    var httpMethod: HTTPMethod { get }
-    var parameters: [String: String]? { get }
-}
+typealias RequestParamName = String
+typealias RequestParamValue = String
 
 public enum HTTPMethod : String {
     case get = "GET"
+}
+
+protocol EndpointType {
+    associatedtype Response
+    
+    var baseURL: String { get }
+    var path: String { get }
+    var httpMethod: HTTPMethod { get }
+    var parameters: [RequestParamName: RequestParamValue]? { get set }
+    
+    func decode(_ data: Data) throws -> Response
+}
+
+extension EndpointType where Response: Decodable {
+    func decode(_ data: Data) throws -> Response {
+        let decoder = JSONDecoder()
+        return try decoder.decode(Response.self, from: data)
+    }
+}
+
+extension EndpointType {
+    mutating func setParameters(_ parameters: [RequestParamName: RequestParamValue]) {
+        self.parameters = parameters
+    }
 }
 
 extension EndpointType {

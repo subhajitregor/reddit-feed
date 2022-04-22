@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9FE7EAEE281357CD00F13B68 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7EAED281357CC00F13B68 /* DateFormatter+Extensions.swift */; };
+		9FE7EAF028135EAC00F13B68 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7EAEF28135EAC00F13B68 /* String+Extensions.swift */; };
 		9FEE242128103B7A000D5885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE242028103B7A000D5885 /* AppDelegate.swift */; };
 		9FEE242328103B7A000D5885 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE242228103B7A000D5885 /* SceneDelegate.swift */; };
 		9FEE242A28103B7C000D5885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FEE242928103B7C000D5885 /* Assets.xcassets */; };
@@ -31,6 +33,12 @@
 		9FEE24992811A178000D5885 /* ServiceResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE24982811A178000D5885 /* ServiceResponseError.swift */; };
 		9FEE249B2811A34E000D5885 /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE249A2811A34E000D5885 /* EndpointType.swift */; };
 		9FEE249D2811A6F5000D5885 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE249C2811A6F5000D5885 /* Service.swift */; };
+		9FEE24A02811B81A000D5885 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE249F2811B81A000D5885 /* FeedService.swift */; };
+		9FEE24A32811B886000D5885 /* FeedEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE24A22811B886000D5885 /* FeedEndpoint.swift */; };
+		9FEE24A52811B910000D5885 /* URLHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE24A42811B910000D5885 /* URLHost.swift */; };
+		9FEE24B128122242000D5885 /* FeedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE24B028122242000D5885 /* FeedPost.swift */; };
+		9FEE24B328126677000D5885 /* AttributedContainer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE24B228126677000D5885 /* AttributedContainer+Extensions.swift */; };
+		9FEE24B528126910000D5885 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE24B428126910000D5885 /* Date+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9FE7EAED281357CC00F13B68 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		9FE7EAEF28135EAC00F13B68 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		9FEE241D28103B7A000D5885 /* reddit-feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "reddit-feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FEE242028103B7A000D5885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FEE242228103B7A000D5885 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +83,12 @@
 		9FEE24982811A178000D5885 /* ServiceResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResponseError.swift; sourceTree = "<group>"; };
 		9FEE249A2811A34E000D5885 /* EndpointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointType.swift; sourceTree = "<group>"; };
 		9FEE249C2811A6F5000D5885 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		9FEE249F2811B81A000D5885 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
+		9FEE24A22811B886000D5885 /* FeedEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedEndpoint.swift; sourceTree = "<group>"; };
+		9FEE24A42811B910000D5885 /* URLHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHost.swift; sourceTree = "<group>"; };
+		9FEE24B028122242000D5885 /* FeedPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPost.swift; sourceTree = "<group>"; };
+		9FEE24B228126677000D5885 /* AttributedContainer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributedContainer+Extensions.swift"; sourceTree = "<group>"; };
+		9FEE24B428126910000D5885 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,9 +187,10 @@
 			isa = PBXGroup;
 			children = (
 				9FEE245828103F76000D5885 /* Main */,
+				9FEE245528103F59000D5885 /* Scenes */,
 				9FEE245728103F6C000D5885 /* Router */,
 				9FEE245628103F63000D5885 /* Service */,
-				9FEE245528103F59000D5885 /* Scenes */,
+				9FEE24AC2812213B000D5885 /* Entities */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -216,6 +233,7 @@
 		9FEE245828103F76000D5885 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				9FEE24A72811C18A000D5885 /* ServiceHelpers */,
 				9FEE245928103FC7000D5885 /* SceneBuilders */,
 			);
 			path = Main;
@@ -242,10 +260,10 @@
 			isa = PBXGroup;
 			children = (
 				9FEE248C2810FD77000D5885 /* Views */,
+				9FEE246628104649000D5885 /* FeedInteractor.swift */,
 				9FEE246028104649000D5885 /* FeedPresenter.swift */,
 				9FEE246328104649000D5885 /* FeedModels.swift */,
 				9FEE246428104649000D5885 /* FeedViewController.swift */,
-				9FEE246628104649000D5885 /* FeedInteractor.swift */,
 				9FEE24752810D8CF000D5885 /* Feed.storyboard */,
 			);
 			path = FeedScene;
@@ -266,6 +284,10 @@
 			children = (
 				9FEE24792810DF35000D5885 /* UIStoryboard+Extensions.swift */,
 				9FEE249328117A73000D5885 /* UITableView+Extensions.swift */,
+				9FEE24B228126677000D5885 /* AttributedContainer+Extensions.swift */,
+				9FEE24B428126910000D5885 /* Date+Extensions.swift */,
+				9FE7EAED281357CC00F13B68 /* DateFormatter+Extensions.swift */,
+				9FE7EAEF28135EAC00F13B68 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				9FEE247F2810E025000D5885 /* UIStoryboard+Constansts.swift */,
+				9FEE24A42811B910000D5885 /* URLHost.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -334,6 +357,47 @@
 			children = (
 			);
 			path = ServiceTest;
+			sourceTree = "<group>";
+		};
+		9FEE24A12811B86B000D5885 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				9FEE249F2811B81A000D5885 /* FeedService.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		9FEE24A72811C18A000D5885 /* ServiceHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				9FEE24AB281211AC000D5885 /* Endpoints */,
+				9FEE24A12811B86B000D5885 /* Feed */,
+			);
+			path = ServiceHelpers;
+			sourceTree = "<group>";
+		};
+		9FEE24AB281211AC000D5885 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				9FEE24A22811B886000D5885 /* FeedEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		9FEE24AC2812213B000D5885 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				9FEE24AF28122227000D5885 /* Remote */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		9FEE24AF28122227000D5885 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				9FEE24B028122242000D5885 /* FeedPost.swift */,
+			);
+			path = Remote;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,19 +506,27 @@
 				9FEE246728104649000D5885 /* FeedPresenter.swift in Sources */,
 				9FEE249228113C66000D5885 /* InterfaceIdentifiable.swift in Sources */,
 				9FEE24972811A16A000D5885 /* ServiceRequestError.swift in Sources */,
+				9FEE24A32811B886000D5885 /* FeedEndpoint.swift in Sources */,
 				9FEE246B28104649000D5885 /* FeedViewController.swift in Sources */,
 				9FEE246D28104649000D5885 /* FeedInteractor.swift in Sources */,
 				9FEE248F2810FDB7000D5885 /* FeedPostTableViewCell.swift in Sources */,
 				9FEE242128103B7A000D5885 /* AppDelegate.swift in Sources */,
+				9FEE24B128122242000D5885 /* FeedPost.swift in Sources */,
+				9FEE24B528126910000D5885 /* Date+Extensions.swift in Sources */,
 				9FEE242328103B7A000D5885 /* SceneDelegate.swift in Sources */,
 				9FEE246A28104649000D5885 /* FeedModels.swift in Sources */,
 				9FEE249428117A74000D5885 /* UITableView+Extensions.swift in Sources */,
+				9FE7EAEE281357CD00F13B68 /* DateFormatter+Extensions.swift in Sources */,
+				9FE7EAF028135EAC00F13B68 /* String+Extensions.swift in Sources */,
 				9FEE249D2811A6F5000D5885 /* Service.swift in Sources */,
+				9FEE24A52811B910000D5885 /* URLHost.swift in Sources */,
+				9FEE24B328126677000D5885 /* AttributedContainer+Extensions.swift in Sources */,
 				9FEE24992811A178000D5885 /* ServiceResponseError.swift in Sources */,
 				9FEE247A2810DF35000D5885 /* UIStoryboard+Extensions.swift in Sources */,
 				9FEE245B28103FE7000D5885 /* SceneBuilder.swift in Sources */,
 				9FEE245E2810406B000D5885 /* FeedBuilder.swift in Sources */,
 				9FEE24802810E025000D5885 /* UIStoryboard+Constansts.swift in Sources */,
+				9FEE24A02811B81A000D5885 /* FeedService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

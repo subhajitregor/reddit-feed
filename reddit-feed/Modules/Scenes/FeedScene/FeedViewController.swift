@@ -41,7 +41,9 @@ final class FeedViewController: UIViewController, InterfaceIdentifiable {
 
 extension FeedViewController: FeedDisplayLogic {
     func displaySuccess(viewModel: Feed.ViewModel) {
-        self.viewModel = viewModel
+        DispatchQueue.main.async {
+            self.viewModel = viewModel
+        }
     }
     
     func displayFailure(error: Error) {

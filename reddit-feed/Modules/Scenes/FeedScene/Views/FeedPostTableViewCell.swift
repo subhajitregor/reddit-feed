@@ -11,8 +11,8 @@ final class FeedPostTableViewCell: UITableViewCell, InterfaceIdentifiable {
     
     struct CellData {
         let imageUrl: String
-        let title: NSAttributedString?
-        let timestamp: NSAttributedString?
+        let title: String?
+        let timestamp: String?
     }
     
     @IBOutlet private var postImageView: UIImageView!
@@ -43,23 +43,24 @@ private extension FeedPostTableViewCell {
     func setUpCell() {
         guard let cellData = data else { return }
         
-        self.titleLabel.attributedText = cellData.title
-        self.timeStampLabel.attributedText = cellData.timestamp
+        self.titleLabel.attributedText = cellData.title?.toNSAttributedString(from: .titleAttribute)
+        self.timeStampLabel.attributedText = cellData.timestamp?.toNSAttributedString(from: .timestampAttribute)
         
         setUpSubviews()
     }
     
     func setUpSubviews() {
         postImageView.layer.cornerRadius = 4
+        titleLabel.numberOfLines = 4
     }
 }
 
 // MARK: Cell Data Extensions
 
 extension FeedPostTableViewCell.CellData {
-    init(from feedPost: String) {
-        self.title = NSAttributedString(string: feedPost)
-        self.timestamp = NSAttributedString("xx-xx-xxxx XX:XX")
-        self.imageUrl = "URL for image"
+    init(from feedPost: Feed.ViewModel.FeedPostVM) {
+        self.title = feedPost.title
+        self.timestamp = feedPost.timestamp
+        self.imageUrl = feedPost.imageThumbnailUrl
     }
 }
