@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		9FE7EAEE281357CD00F13B68 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7EAED281357CC00F13B68 /* DateFormatter+Extensions.swift */; };
 		9FE7EAF028135EAC00F13B68 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7EAEF28135EAC00F13B68 /* String+Extensions.swift */; };
+		9FE7EAFD28138C0900F13B68 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7EAFC28138C0900F13B68 /* ImageService.swift */; };
+		9FE7EAFF28138C3D00F13B68 /* ImageRequestEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7EAFE28138C3D00F13B68 /* ImageRequestEndpoint.swift */; };
+		9FE7EB042813AEFC00F13B68 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7EB032813AEFC00F13B68 /* HTTPMethod.swift */; };
+		9FE7EB062813B2BE00F13B68 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7EB052813B2BE00F13B68 /* URLParameterEncoder.swift */; };
+		9FE7EB082813B72500F13B68 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7EB072813B72500F13B68 /* ParameterEncoder.swift */; };
+		9FE7EB0A2813C62200F13B68 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7EB092813C62200F13B68 /* JSONParameterEncoder.swift */; };
 		9FEE242128103B7A000D5885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE242028103B7A000D5885 /* AppDelegate.swift */; };
 		9FEE242328103B7A000D5885 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE242228103B7A000D5885 /* SceneDelegate.swift */; };
 		9FEE242A28103B7C000D5885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FEE242928103B7C000D5885 /* Assets.xcassets */; };
@@ -54,6 +60,12 @@
 /* Begin PBXFileReference section */
 		9FE7EAED281357CC00F13B68 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		9FE7EAEF28135EAC00F13B68 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		9FE7EAFC28138C0900F13B68 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		9FE7EAFE28138C3D00F13B68 /* ImageRequestEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRequestEndpoint.swift; sourceTree = "<group>"; };
+		9FE7EB032813AEFC00F13B68 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		9FE7EB052813B2BE00F13B68 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		9FE7EB072813B72500F13B68 /* ParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
+		9FE7EB092813C62200F13B68 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 		9FEE241D28103B7A000D5885 /* reddit-feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "reddit-feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FEE242028103B7A000D5885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FEE242228103B7A000D5885 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +121,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9FE7EAFB28138A9300F13B68 /* ImageService */ = {
+			isa = PBXGroup;
+			children = (
+				9FE7EAFC28138C0900F13B68 /* ImageService.swift */,
+			);
+			path = ImageService;
+			sourceTree = "<group>";
+		};
+		9FE7EB002813AE9700F13B68 /* ParameterEncoder */ = {
+			isa = PBXGroup;
+			children = (
+				9FE7EB052813B2BE00F13B68 /* URLParameterEncoder.swift */,
+				9FE7EB072813B72500F13B68 /* ParameterEncoder.swift */,
+				9FE7EB092813C62200F13B68 /* JSONParameterEncoder.swift */,
+			);
+			path = ParameterEncoder;
+			sourceTree = "<group>";
+		};
 		9FEE241428103B7A000D5885 = {
 			isa = PBXGroup;
 			children = (
@@ -216,8 +246,10 @@
 		9FEE245628103F63000D5885 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				9FE7EB032813AEFC00F13B68 /* HTTPMethod.swift */,
 				9FEE249A2811A34E000D5885 /* EndpointType.swift */,
 				9FEE249C2811A6F5000D5885 /* Service.swift */,
+				9FE7EB002813AE9700F13B68 /* ParameterEncoder */,
 				9FEE24952811A0FD000D5885 /* ErrorHandlers */,
 			);
 			path = Service;
@@ -370,6 +402,7 @@
 		9FEE24A72811C18A000D5885 /* ServiceHelpers */ = {
 			isa = PBXGroup;
 			children = (
+				9FE7EAFB28138A9300F13B68 /* ImageService */,
 				9FEE24AB281211AC000D5885 /* Endpoints */,
 				9FEE24A12811B86B000D5885 /* Feed */,
 			);
@@ -379,6 +412,7 @@
 		9FEE24AB281211AC000D5885 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
+				9FE7EAFE28138C3D00F13B68 /* ImageRequestEndpoint.swift */,
 				9FEE24A22811B886000D5885 /* FeedEndpoint.swift */,
 			);
 			path = Endpoints;
@@ -509,13 +543,19 @@
 				9FEE24A32811B886000D5885 /* FeedEndpoint.swift in Sources */,
 				9FEE246B28104649000D5885 /* FeedViewController.swift in Sources */,
 				9FEE246D28104649000D5885 /* FeedInteractor.swift in Sources */,
+				9FE7EB062813B2BE00F13B68 /* URLParameterEncoder.swift in Sources */,
 				9FEE248F2810FDB7000D5885 /* FeedPostTableViewCell.swift in Sources */,
 				9FEE242128103B7A000D5885 /* AppDelegate.swift in Sources */,
 				9FEE24B128122242000D5885 /* FeedPost.swift in Sources */,
+				9FE7EB082813B72500F13B68 /* ParameterEncoder.swift in Sources */,
 				9FEE24B528126910000D5885 /* Date+Extensions.swift in Sources */,
+				9FE7EAFD28138C0900F13B68 /* ImageService.swift in Sources */,
 				9FEE242328103B7A000D5885 /* SceneDelegate.swift in Sources */,
+				9FE7EB0A2813C62200F13B68 /* JSONParameterEncoder.swift in Sources */,
 				9FEE246A28104649000D5885 /* FeedModels.swift in Sources */,
+				9FE7EAFF28138C3D00F13B68 /* ImageRequestEndpoint.swift in Sources */,
 				9FEE249428117A74000D5885 /* UITableView+Extensions.swift in Sources */,
+				9FE7EB042813AEFC00F13B68 /* HTTPMethod.swift in Sources */,
 				9FE7EAEE281357CD00F13B68 /* DateFormatter+Extensions.swift in Sources */,
 				9FE7EAF028135EAC00F13B68 /* String+Extensions.swift in Sources */,
 				9FEE249D2811A6F5000D5885 /* Service.swift in Sources */,

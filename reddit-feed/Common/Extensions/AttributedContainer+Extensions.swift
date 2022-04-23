@@ -17,7 +17,7 @@ extension AttributeContainer {
             case .titleAttribute:
                 return AttributeContainer([
                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .bold),
-                    NSAttributedString.Key.foregroundColor: UIColor.darkText
+                    NSAttributedString.Key.foregroundColor: UIColor.systemIndigo
                 ])
             case .timestampAttribute:
                 return AttributeContainer([

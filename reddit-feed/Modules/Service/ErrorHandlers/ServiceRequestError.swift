@@ -12,6 +12,25 @@ enum ServiceRequestError: Error {
     case timeOut
     case noInternet(_ message: String)
     case notHandled
+    case missingURL
+    case requestBodyEncodingFailed
+    
+    var errorMessage: String {
+        switch self {
+        case .cancelledByUser:
+            return "Cancelled by user."
+        case .timeOut:
+            return "Request Timed out"
+        case .noInternet(let message):
+            return "No Internet. Message: \(message)"
+        case .notHandled:
+            return "Not Handled"
+        case .missingURL:
+            return "URL not found"
+        case .requestBodyEncodingFailed:
+            return "Request Body Encoding Failed"
+        }
+    }
 }
 
 final class RequestErrorBuilder {
