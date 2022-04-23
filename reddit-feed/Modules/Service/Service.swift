@@ -39,30 +39,35 @@ class Service: NSObject, ServiceProtocol, ServiceCancellable {
         
         let session = URLSession(configuration: configuration)
         
-        task = session.dataTask(with: route.urlRequest) { data, response, error in
-            if let error = error as? URLError {
-                let requestError = RequestErrorBuilder.handleError(error)
-                completion(.failure(requestError))
-            } else {
-                let responseError = ResponseErrorBuilder.handleNetworkResponse(response)
-                
-                switch responseError {
-                case .none:
-                    guard let data = data else {
-                        return completion(.failure(ServiceResponseError.noData))
-                    }
+        do {
+            task = session.dataTask(with: try route.urlRequest) { data, response, error in
+                if let error = error as? URLError {
+                    let requestError = RequestErrorBuilder.handleError(error)
+                    completion(.failure(requestError))
+                } else {
+                    let responseError = ResponseErrorBuilder.handleNetworkResponse(response)
+                    
+                    switch responseError {
+                    case .none:
+                        guard let data = data else {
+                            return completion(.failure(ServiceResponseError.noData))
+                        }
 
-                    do {
-                        try completion(.success(route.decode(data)))
-                    } catch let decodingError {
-                        completion(.failure(decodingError))
+                        do {
+                            try completion(.success(route.decode(data)))
+                        } catch let decodingError {
+                            completion(.failure(decodingError))
+                        }
+                    default:
+                        completion(.failure(responseError))
                     }
-                default:
-                    completion(.failure(responseError))
                 }
             }
+            task?.resume()
+        } catch {
+            completion(.failure(error))
         }
-        task?.resume()
+        
     }
     
     func cancel() {

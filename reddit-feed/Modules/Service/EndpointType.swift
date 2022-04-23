@@ -8,12 +8,7 @@
 import Foundation
 
 public typealias HTTPHeaders = [String:String]
-typealias RequestParamName = String
-typealias RequestParamValue = String
-
-public enum HTTPMethod : String {
-    case get = "GET"
-}
+typealias RequestParameters = [String: String]
 
 protocol EndpointType {
     associatedtype Response
@@ -21,7 +16,9 @@ protocol EndpointType {
     var baseURL: String { get }
     var path: String { get }
     var httpMethod: HTTPMethod { get }
-    var parameters: [RequestParamName: RequestParamValue]? { get set }
+    var urlParameters: RequestParameters? { get }
+    var bodyParameters: RequestParameters? { get }
+    var httpHeaders: HTTPHeaders? { get }
     
     func decode(_ data: Data) throws -> Response
 }
@@ -34,33 +31,61 @@ extension EndpointType where Response: Decodable {
 }
 
 extension EndpointType {
-    mutating func setParameters(_ parameters: [RequestParamName: RequestParamValue]) {
-        self.parameters = parameters
-    }
-}
-
-extension EndpointType {
-    public var urlRequest: URLRequest {
-        guard let url = self.url else {
-            fatalError("URL could not be built")
-        }
-        var request = URLRequest(url: url)
-        request.httpMethod = httpMethod.rawValue
-        
-        return request
+    var urlParameters: RequestParameters? {
+        nil
     }
     
-    private var url: URL? {
-        var urlComponents = URLComponents(string: baseURL)
-        urlComponents?.path = path
-        if httpMethod == .get {
-            // add query items to url
-            guard let parameters = parameters else {
-                fatalError("parameters for GET http method must conform to [String: String]")
-            }
-            urlComponents?.queryItems = parameters.map { URLQueryItem(name: $0.key, value: $0.value) }
+    var bodyParameters: RequestParameters? {
+        nil
+    }
+    
+    var httpHeaders: HTTPHeaders? {
+        nil
+    }
+    
+    var urlRequest: URLRequest {
+        get throws {
+            return try request(urlParameters: urlParameters, bodyParameters: bodyParameters, additionalHeader: httpHeaders)
+        }
+    }
+    
+    private func request(urlParameters: RequestParameters?,
+                         bodyParameters: RequestParameters?,
+                         additionalHeader: HTTPHeaders?) throws -> URLRequest {
+        guard var baseUrl = URL(string: baseURL) else {
+            throw ServiceRequestError.missingURL
         }
         
-        return urlComponents?.url
+        if !path.isEmpty {
+            baseUrl.appendPathComponent(path)
+        }
+        
+        var request = URLRequest(url: baseUrl)
+        
+        request.httpMethod = httpMethod.rawValue
+        do {
+            if urlParameters?.isEmpty ?? true, bodyParameters?.isEmpty ?? true {
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            } else {
+                if let urlParameters = urlParameters, !urlParameters.isEmpty {
+                    try URLParameterEncoder.encodeRequest(&request, with: urlParameters)
+                }
+                
+                if let bodyParameters = bodyParameters {
+                    try JSONParameterEncoder.encodeRequest(&request, with: bodyParameters)
+                }
+            }
+            
+            if let additionalHeader = additionalHeader, !additionalHeader.isEmpty {
+                for (key, value) in additionalHeader {
+                    request.setValue(value, forHTTPHeaderField: key)
+                }
+            }
+            
+            return request
+            
+        } catch {
+            throw error
+        }
     }
 }

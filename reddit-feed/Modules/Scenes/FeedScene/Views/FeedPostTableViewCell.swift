@@ -46,6 +46,13 @@ private extension FeedPostTableViewCell {
         self.titleLabel.attributedText = cellData.title?.toNSAttributedString(from: .titleAttribute)
         self.timeStampLabel.attributedText = cellData.timestamp?.toNSAttributedString(from: .timestampAttribute)
         
+        ImageService.shared.loadImage(cellData.imageUrl)  { [weak self] image in
+            guard let `self` = self else { return }
+            DispatchQueue.main.async {
+                self.postImageView.image = image
+            }
+        }
+        
         setUpSubviews()
     }
     

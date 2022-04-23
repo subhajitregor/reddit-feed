@@ -10,7 +10,7 @@ import Foundation
 struct FeedEndpoint: EndpointType, URLHost {
     var path: String = "/r/pics/.json"
     var httpMethod: HTTPMethod = .get
-    var parameters: [RequestParamName : RequestParamValue]? = ["jsonp": ""]
+    var urlParameters: RequestParameters? = ["jsonp": ""]
 }
 
 extension FeedEndpoint {
