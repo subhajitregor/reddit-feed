@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F54B9AE2814B5F100EC9ECC /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9AD2814B5F100EC9ECC /* Cache.swift */; };
 		9FE7EAEE281357CD00F13B68 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7EAED281357CC00F13B68 /* DateFormatter+Extensions.swift */; };
 		9FE7EAF028135EAC00F13B68 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7EAEF28135EAC00F13B68 /* String+Extensions.swift */; };
 		9FE7EAFD28138C0900F13B68 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7EAFC28138C0900F13B68 /* ImageService.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F54B9AD2814B5F100EC9ECC /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		9FE7EAED281357CC00F13B68 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		9FE7EAEF28135EAC00F13B68 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		9FE7EAFC28138C0900F13B68 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F54B9AC2814B5E000EC9ECC /* CacheService */ = {
+			isa = PBXGroup;
+			children = (
+				9F54B9AD2814B5F100EC9ECC /* Cache.swift */,
+			);
+			path = CacheService;
+			sourceTree = "<group>";
+		};
 		9FE7EAFB28138A9300F13B68 /* ImageService */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +256,7 @@
 		9FEE245628103F63000D5885 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				9F54B9AC2814B5E000EC9ECC /* CacheService */,
 				9FE7EB032813AEFC00F13B68 /* HTTPMethod.swift */,
 				9FEE249A2811A34E000D5885 /* EndpointType.swift */,
 				9FEE249C2811A6F5000D5885 /* Service.swift */,
@@ -562,6 +573,7 @@
 				9FEE24A52811B910000D5885 /* URLHost.swift in Sources */,
 				9FEE24B328126677000D5885 /* AttributedContainer+Extensions.swift in Sources */,
 				9FEE24992811A178000D5885 /* ServiceResponseError.swift in Sources */,
+				9F54B9AE2814B5F100EC9ECC /* Cache.swift in Sources */,
 				9FEE247A2810DF35000D5885 /* UIStoryboard+Extensions.swift in Sources */,
 				9FEE245B28103FE7000D5885 /* SceneBuilder.swift in Sources */,
 				9FEE245E2810406B000D5885 /* FeedBuilder.swift in Sources */,
