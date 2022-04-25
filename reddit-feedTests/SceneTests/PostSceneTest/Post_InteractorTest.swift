@@ -74,19 +74,6 @@ class Post_InteractorTest: XCTestCase {
         PostInteractor(presenter: presenter, router: router)
     }
     
-    class PresenterSpy: PostPresentationLogic {
-        var presented: Int = 0
-        var failed: Int = 0
-        
-        func presentPost(response: Post.FeedPost.Model) {
-            presented += 1
-        }
-        
-        func presentFailure(error: Error) {
-            failed += 1
-        }
-    }
-    
     class RouterSpy: PostRoutingLogic {
         var isClosed: Int = 0
         
