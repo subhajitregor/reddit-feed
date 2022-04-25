@@ -25,6 +25,7 @@ final class ImageService: Service {
 
 extension ImageService: ImageServiceLogic {
     func loadImage(_ urlString: String, defaultImage: UIImage = UIImage(), loaded: @escaping (UIImage) -> Void) {
+        loaded(defaultImage)
         DispatchQueue.global(qos: .utility).async { [weak self] in
             guard let self = self else { return }
             

@@ -9,13 +9,22 @@ import UIKit
 
 final class FeedBuilder: SceneBuilder {
     
+    private var router: FeedRoutingLogic
+    private var service: FeedServiceLogic
+    
+    init(router: FeedRoutingLogic, service: FeedServiceLogic) {
+        self.router = router
+        self.service = service
+    }
+    
     func build() -> FeedViewController {
         let viewController: FeedViewController = UIStoryboard(from: .feed).createViewController()
         
         let presenter: FeedPresentationLogic = FeedPresenter(viewController: viewController)
         
-        let router: FeedRoutingLogic = FeedRouter()
-        let service: FeedServiceLogic = FeedService()
+        let router: FeedRoutingLogic = router
+        let service: FeedServiceLogic = service
+        
         let interactor: FeedBusinessLogic = FeedInteractor(presenter: presenter,
                                                            service: service,
                                                            router: router)
@@ -25,10 +34,3 @@ final class FeedBuilder: SceneBuilder {
         return viewController
     }
 }
-
-// TODO: Move these to their proper groups
-
-final class FeedRouter: FeedRoutingLogic {
-    func moveToDetail(with postId: Int) {}
-}
-
