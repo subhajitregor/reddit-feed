@@ -9,10 +9,13 @@ import UIKit
 
 final class PostBuilder: SceneBuilder {
     
-    var dataProvider: PostDataProvider
+    private var dataProvider: PostDataProvider
+    private var postRouter: PostRoutingLogic
     
-    init(dataProvider: PostDataProvider) {
+    init(dataProvider: PostDataProvider,
+         router: PostRoutingLogic) {
         self.dataProvider = dataProvider
+        self.postRouter = router
     }
     
     func build() -> PostViewController {
@@ -20,7 +23,7 @@ final class PostBuilder: SceneBuilder {
         
         let presenter: PostPresentationLogic = PostPresenter(viewController: viewController)
         
-        let router: PostRoutingLogic = PostRouter()
+        let router: PostRoutingLogic = postRouter
         
         let interactor = PostInteractor(presenter: presenter,
                                         router: router)
@@ -30,12 +33,3 @@ final class PostBuilder: SceneBuilder {
         return viewController
     }
 }
-
-// TODO: Move these to their proper groups
-
-final class PostRouter: PostRoutingLogic {
-    func needsClosing() {
-        
-    }
-}
-

@@ -30,6 +30,7 @@ final class PostViewController: UIViewController, InterfaceIdentifiable {
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.start()
+        setUp()
     }
     
     @IBAction func tappedCloseButton(_ sender: Any) {
@@ -61,6 +62,13 @@ extension PostViewController: PostDisplayLogic {
 }
 
 private extension PostViewController {
+    func setUp() {
+        setUpNavigationBar()
+    }
+    
+    func setUpNavigationBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
     
     func setupTitle(with authorName: String) {
         self.title = "Posted by: \(authorName)"

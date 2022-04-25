@@ -25,6 +25,4 @@ enum Post {
             let timestamp: Date
         }
     }
-    
-    
 }
