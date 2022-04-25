@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let rootVC = FeedBuilder().build()
+        let rootVC = PostBuilder(dataProvider: SomeData()).build()//FeedBuilder().build()
         let rootNavigationController = UINavigationController(rootViewController: rootVC)
         rootNavigationController.navigationBar.prefersLargeTitles = true
         window = UIWindow(windowScene: windowScene)
@@ -26,3 +26,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+struct SomeData: PostDataProvider {
+    var id: String = "_"
+    
+    var title: String = "Voilence, Voilence, Voilence. I dont Like it. I avoid. But, voilence likes me... I can't avoid."
+    
+    var originalImageUrl: String = "https://indianmemetemplates.com/wp-content/uploads/I-dont-like-violence-but-violence-likes-me.jpg"
+    
+    var author: String = "Yash"
+    
+    var timestamp: Date = Date(timeIntervalSinceNow: -2000)
+    
+    
+}
