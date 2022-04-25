@@ -10,5 +10,6 @@ import UIKit
 extension UIStoryboard {
     enum Storyboard: String {
         case feed = "Feed"
+        case post = "Post"
     }
 }

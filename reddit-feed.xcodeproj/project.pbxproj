@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		9F54B9AE2814B5F100EC9ECC /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9AD2814B5F100EC9ECC /* Cache.swift */; };
+		9F54B9BD2814C91100EC9ECC /* PostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9B62814C91100EC9ECC /* PostPresenter.swift */; };
+		9F54B9C02814C91100EC9ECC /* PostModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9B92814C91100EC9ECC /* PostModels.swift */; };
+		9F54B9C12814C91100EC9ECC /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9BA2814C91100EC9ECC /* PostViewController.swift */; };
+		9F54B9C32814C91100EC9ECC /* PostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9BC2814C91100EC9ECC /* PostInteractor.swift */; };
+		9F54B9C6281517CA00EC9ECC /* Post_InteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9C5281517CA00EC9ECC /* Post_InteractorTest.swift */; };
+		9F54B9C82816077B00EC9ECC /* Post_PresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9C72816077B00EC9ECC /* Post_PresenterTest.swift */; };
+		9F54B9CA28160D3700EC9ECC /* Post_VCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9C928160D3700EC9ECC /* Post_VCTest.swift */; };
+		9F54B9CC281611B900EC9ECC /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F54B9CB281611B900EC9ECC /* Post.storyboard */; };
+		9F54B9D02816278500EC9ECC /* PostPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9CF2816278500EC9ECC /* PostPresenterSpy.swift */; };
 		9FE7EAEE281357CD00F13B68 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7EAED281357CC00F13B68 /* DateFormatter+Extensions.swift */; };
 		9FE7EAF028135EAC00F13B68 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7EAEF28135EAC00F13B68 /* String+Extensions.swift */; };
 		9FE7EAFD28138C0900F13B68 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7EAFC28138C0900F13B68 /* ImageService.swift */; };
@@ -60,6 +69,15 @@
 
 /* Begin PBXFileReference section */
 		9F54B9AD2814B5F100EC9ECC /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		9F54B9B62814C91100EC9ECC /* PostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenter.swift; sourceTree = "<group>"; };
+		9F54B9B92814C91100EC9ECC /* PostModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModels.swift; sourceTree = "<group>"; };
+		9F54B9BA2814C91100EC9ECC /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		9F54B9BC2814C91100EC9ECC /* PostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInteractor.swift; sourceTree = "<group>"; };
+		9F54B9C5281517CA00EC9ECC /* Post_InteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post_InteractorTest.swift; sourceTree = "<group>"; };
+		9F54B9C72816077B00EC9ECC /* Post_PresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post_PresenterTest.swift; sourceTree = "<group>"; };
+		9F54B9C928160D3700EC9ECC /* Post_VCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post_VCTest.swift; sourceTree = "<group>"; };
+		9F54B9CB281611B900EC9ECC /* Post.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
+		9F54B9CF2816278500EC9ECC /* PostPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenterSpy.swift; sourceTree = "<group>"; };
 		9FE7EAED281357CC00F13B68 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		9FE7EAEF28135EAC00F13B68 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		9FE7EAFC28138C0900F13B68 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
@@ -129,6 +147,37 @@
 				9F54B9AD2814B5F100EC9ECC /* Cache.swift */,
 			);
 			path = CacheService;
+			sourceTree = "<group>";
+		};
+		9F54B9B52814C8E200EC9ECC /* PostScene */ = {
+			isa = PBXGroup;
+			children = (
+				9F54B9B62814C91100EC9ECC /* PostPresenter.swift */,
+				9F54B9B92814C91100EC9ECC /* PostModels.swift */,
+				9F54B9BA2814C91100EC9ECC /* PostViewController.swift */,
+				9F54B9BC2814C91100EC9ECC /* PostInteractor.swift */,
+				9F54B9CB281611B900EC9ECC /* Post.storyboard */,
+			);
+			path = PostScene;
+			sourceTree = "<group>";
+		};
+		9F54B9C4281517A300EC9ECC /* PostSceneTest */ = {
+			isa = PBXGroup;
+			children = (
+				9F54B9CE2816276E00EC9ECC /* Mock */,
+				9F54B9C5281517CA00EC9ECC /* Post_InteractorTest.swift */,
+				9F54B9C72816077B00EC9ECC /* Post_PresenterTest.swift */,
+				9F54B9C928160D3700EC9ECC /* Post_VCTest.swift */,
+			);
+			path = PostSceneTest;
+			sourceTree = "<group>";
+		};
+		9F54B9CE2816276E00EC9ECC /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				9F54B9CF2816278500EC9ECC /* PostPresenterSpy.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		9FE7EAFB28138A9300F13B68 /* ImageService */ = {
@@ -248,6 +297,7 @@
 		9FEE245528103F59000D5885 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9F54B9B52814C8E200EC9ECC /* PostScene */,
 				9FEE245F2810416A000D5885 /* FeedScene */,
 			);
 			path = Scenes;
@@ -364,6 +414,7 @@
 		9FEE24842810EA8D000D5885 /* SceneTests */ = {
 			isa = PBXGroup;
 			children = (
+				9F54B9C4281517A300EC9ECC /* PostSceneTest */,
 				9FEE24832810EA6E000D5885 /* FeedSceneTest */,
 			);
 			path = SceneTests;
@@ -529,6 +580,7 @@
 				9FEE242D28103B7C000D5885 /* LaunchScreen.storyboard in Resources */,
 				9FEE24762810D8CF000D5885 /* Feed.storyboard in Resources */,
 				9FEE242A28103B7C000D5885 /* Assets.xcassets in Resources */,
+				9F54B9CC281611B900EC9ECC /* Post.storyboard in Resources */,
 				9FEE24902810FDB7000D5885 /* FeedPostTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,14 +600,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FEE249B2811A34E000D5885 /* EndpointType.swift in Sources */,
+				9F54B9C02814C91100EC9ECC /* PostModels.swift in Sources */,
 				9FEE246728104649000D5885 /* FeedPresenter.swift in Sources */,
 				9FEE249228113C66000D5885 /* InterfaceIdentifiable.swift in Sources */,
 				9FEE24972811A16A000D5885 /* ServiceRequestError.swift in Sources */,
 				9FEE24A32811B886000D5885 /* FeedEndpoint.swift in Sources */,
+				9F54B9BD2814C91100EC9ECC /* PostPresenter.swift in Sources */,
 				9FEE246B28104649000D5885 /* FeedViewController.swift in Sources */,
 				9FEE246D28104649000D5885 /* FeedInteractor.swift in Sources */,
 				9FE7EB062813B2BE00F13B68 /* URLParameterEncoder.swift in Sources */,
 				9FEE248F2810FDB7000D5885 /* FeedPostTableViewCell.swift in Sources */,
+				9F54B9C12814C91100EC9ECC /* PostViewController.swift in Sources */,
 				9FEE242128103B7A000D5885 /* AppDelegate.swift in Sources */,
 				9FEE24B128122242000D5885 /* FeedPost.swift in Sources */,
 				9FE7EB082813B72500F13B68 /* ParameterEncoder.swift in Sources */,
@@ -577,6 +632,7 @@
 				9FEE247A2810DF35000D5885 /* UIStoryboard+Extensions.swift in Sources */,
 				9FEE245B28103FE7000D5885 /* SceneBuilder.swift in Sources */,
 				9FEE245E2810406B000D5885 /* FeedBuilder.swift in Sources */,
+				9F54B9C32814C91100EC9ECC /* PostInteractor.swift in Sources */,
 				9FEE24802810E025000D5885 /* UIStoryboard+Constansts.swift in Sources */,
 				9FEE24A02811B81A000D5885 /* FeedService.swift in Sources */,
 			);
@@ -586,8 +642,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F54B9C6281517CA00EC9ECC /* Post_InteractorTest.swift in Sources */,
 				9FEE248B2810ECEA000D5885 /* ErrorSpy.swift in Sources */,
+				9F54B9CA28160D3700EC9ECC /* Post_VCTest.swift in Sources */,
+				9F54B9D02816278500EC9ECC /* PostPresenterSpy.swift in Sources */,
 				9FEE24862810EAB7000D5885 /* Feed_PresenterTest.swift in Sources */,
+				9F54B9C82816077B00EC9ECC /* Post_PresenterTest.swift in Sources */,
 				9FEE246F28105390000D5885 /* Feed_InteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
