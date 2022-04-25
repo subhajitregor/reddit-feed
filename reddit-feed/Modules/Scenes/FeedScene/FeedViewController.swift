@@ -15,7 +15,7 @@ final class FeedViewController: UIViewController, InterfaceIdentifiable {
     @IBOutlet private var feedTable: UITableView!
     
     private var interactor: FeedBusinessLogic?
-    private var viewModel: Feed.ViewModel? {
+    private(set) var viewModel: Feed.ViewModel? {
         didSet {
             feedTable.reloadData()
         }
@@ -47,7 +47,7 @@ extension FeedViewController: FeedDisplayLogic {
     }
     
     func displayFailure(error: Error) {
-        
+        // Not Implemented yet
     }
 }
 
@@ -90,6 +90,11 @@ extension FeedViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
+}
+
+extension FeedViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let post = viewModel?.feedList[indexPath.row] else { return }
+        interactor?.openDetailsView(for: post)
+    }
 }

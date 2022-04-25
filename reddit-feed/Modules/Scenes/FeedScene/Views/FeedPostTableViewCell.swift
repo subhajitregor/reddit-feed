@@ -67,7 +67,7 @@ private extension FeedPostTableViewCell {
 extension FeedPostTableViewCell.CellData {
     init(from feedPost: Feed.ViewModel.FeedPostVM) {
         self.title = feedPost.title
-        self.timestamp = feedPost.timestamp
+        self.timestamp = feedPost.timestamp.toString(from: .time_on_mmm_space_dd_comma_yyyy)
         self.imageUrl = feedPost.imageThumbnailUrl
     }
 }

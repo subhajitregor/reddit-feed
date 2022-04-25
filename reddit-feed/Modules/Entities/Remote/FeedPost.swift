@@ -10,13 +10,15 @@ import Foundation
 struct RedditFeed: Decodable {
     
     struct FeedPost: Decodable {
+        let id: String
+        let author: String
         let title: String
         let thumbnail: String
         let originalImage: String // url
         let createdAt: Date // created_utc
         
         enum CodingKeys: String, CodingKey {
-            case title, thumbnail
+            case title, thumbnail, id, author
             case originalImage = "url"
             case createdAt = "created"
             case data
@@ -52,6 +54,8 @@ extension RedditFeed.FeedPost {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let dataContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
         
+        id = try dataContainer.decode(String.self, forKey: .id)
+        author = try dataContainer.decode(String.self, forKey: .author)
         title = try dataContainer.decode(String.self, forKey: .title)
         thumbnail = try dataContainer.decode(String.self, forKey: .thumbnail)
         originalImage = try dataContainer.decode(String.self, forKey: .originalImage)

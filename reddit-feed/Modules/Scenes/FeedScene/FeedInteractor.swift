@@ -6,7 +6,7 @@
 
 protocol FeedBusinessLogic {
     func fetchAllFeeds(request: Feed.Fetch.Request)
-    func openDetailsView(for postId: Int)
+    func openDetailsView(for post: Feed.ViewModel.FeedPostVM)
 }
 
 protocol FeedServiceLogic {
@@ -14,7 +14,7 @@ protocol FeedServiceLogic {
 }
 
 protocol FeedRoutingLogic {
-    func moveToDetail(with postId: Int)
+    func moveToDetail(with post: Feed.ViewModel.FeedPostVM)
 }
 
 protocol FeedDataStore {}
@@ -47,7 +47,7 @@ extension FeedInteractor: FeedBusinessLogic {
         }
     }
     
-    func openDetailsView(for postId: Int) {
-        router.moveToDetail(with: postId)
+    func openDetailsView(for post: Feed.ViewModel.FeedPostVM) {
+        router.moveToDetail(with: post)
     }
 }

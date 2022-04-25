@@ -24,16 +24,20 @@ enum Feed {
 
 extension Feed.ViewModel {
     final class FeedPostVM {
+        var id: String
+        var author: String
         var imageThumbnailUrl: String
         var originalImageURL: String
         var title: String
-        var timestamp: String
+        var timestamp: Date
         
         init(from post: RedditFeed.FeedPost) {
+            id = post.id
+            author = post.author
             imageThumbnailUrl = post.thumbnail
             originalImageURL = post.originalImage
             title = post.title
-            timestamp = post.createdAt.toString(from: .time_on_mmm_space_dd_comma_yyyy)
+            timestamp = post.createdAt
         }
     }
 }

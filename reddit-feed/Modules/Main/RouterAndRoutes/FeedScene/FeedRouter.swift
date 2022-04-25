@@ -13,17 +13,17 @@ final class FeedRouter: MainRouter<FeedViewController>, FeedRouter.Routes {
 }
 
 extension FeedRouter: FeedRoutingLogic {
-    func moveToDetail(with postId: Int) {
-        openPostScene(dataProvider: makePostRouterData(from: postId))
+    func moveToDetail(with post: Feed.ViewModel.FeedPostVM) {
+        openPostScene(dataProvider: makePostRouterData(from: post))
     }
 }
 
 private extension FeedRouter {
-    func makePostRouterData(from feedDataPassed: Int) -> PostSceneRoutingData {
-        PostSceneRoutingData(id: "_",
-                             title: "Voilence, Voilence, Voilence. I dont Like it. I avoid. But, voilence likes me... I can't avoid.",
-                             originalImageUrl: "https://indianmemetemplates.com/wp-content/uploads/I-dont-like-violence-but-violence-likes-me.jpg",
-                             author: "Yash",
-                             timestamp: Date(timeIntervalSinceNow: -2000))
+    func makePostRouterData(from feedDataPassed: Feed.ViewModel.FeedPostVM) -> PostSceneRoutingData {
+        PostSceneRoutingData(id: feedDataPassed.id,
+                             title: feedDataPassed.title,
+                             originalImageUrl: feedDataPassed.originalImageURL,
+                             author: feedDataPassed.author,
+                             timestamp: feedDataPassed.timestamp)
     }
 }
