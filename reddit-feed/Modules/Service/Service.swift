@@ -32,6 +32,7 @@ class Service: NSObject, ServiceProtocol, ServiceCancellable {
         
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForResource = 30
+        configuration.requestCachePolicy = .useProtocolCachePolicy
         
         if #available(iOS 11, *) {
             configuration.waitsForConnectivity = false

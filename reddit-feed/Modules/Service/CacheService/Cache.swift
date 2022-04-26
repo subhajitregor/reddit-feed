@@ -14,16 +14,20 @@ final class Cache<Key: Hashable, Value> {
     private let entryLifetime: TimeInterval
     
     init(dateProvider: @escaping () -> Date = Date.init,
-         entryLifetime: TimeInterval = 12 * 60 * 60) {
+         entryLifetime: TimeInterval = 1 * 60 * 60) {
         self.dateProvider = dateProvider
         self.entryLifetime = entryLifetime
-        wrapped.totalCostLimit = 50_000_000
+        self.wrapped.totalCostLimit = 50_000_000 // 50 MB
     }
     
     func insert(_ value: Value, forKey key: Key) {
         let date = dateProvider().addingTimeInterval(entryLifetime)
         let entry = Entry(value: value, expirationDate: date)
-        wrapped.setObject(entry, forKey: CacheKey(key))
+        var cost = 0
+        if let image = value as? UIImage, let data = image.pngData() {
+            cost = data.count
+        }
+        wrapped.setObject(entry, forKey: CacheKey(key), cost: cost)
     }
     
     func value(forKey key: Key) -> Value? {
@@ -74,13 +78,27 @@ private extension Cache {
 }
 
 private extension Cache {
-    final class Entry {
-        let value: Value
+    final class Entry: NSDiscardableContent {
+        var value: Value?
         let expirationDate: Date
         
         init(value: Value, expirationDate: Date) {
             self.value = value
             self.expirationDate = expirationDate
+        }
+        
+        func beginContentAccess() -> Bool {
+            value != nil
+        }
+        
+        func endContentAccess() {}
+        
+        func discardContentIfPossible() {
+            value = nil
+        }
+        
+        func isContentDiscarded() -> Bool {
+            value == nil
         }
     }
 }
