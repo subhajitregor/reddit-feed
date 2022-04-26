@@ -31,11 +31,9 @@ class MainRouter<U>: RouterProtocol, Closable where U: UIViewController {
 
     func close() {
         guard let openTransition = openTransition else {
-            assertionFailure("You should specify an open transition in order to close a module.")
             return
         }
         guard let viewController = rootController else {
-            assertionFailure("Nothing to close.")
             return
         }
         openTransition.close(viewController)

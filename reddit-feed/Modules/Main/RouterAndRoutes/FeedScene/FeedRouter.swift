@@ -6,15 +6,16 @@
 //
 
 import Foundation
+import UIKit
 
-final class FeedRouter: MainRouter<FeedViewController>, FeedRouter.Routes {
+final class FeedRouter: MainRouter<UIViewController>, FeedRouter.Routes {
     typealias Routes = PostSceneRoute
-    
+    var openPostTransition: Transition = PushTransition()
 }
 
 extension FeedRouter: FeedRoutingLogic {
     func moveToDetail(with post: Feed.ViewModel.FeedPostVM) {
-        openPostScene(dataProvider: makePostRouterData(from: post))
+        openPostScene(transition: openPostTransition, dataProvider: makePostRouterData(from: post))
     }
 }
 

@@ -5,9 +5,9 @@
 //  Created by Subhajit on 25/04/22.
 //
 
-import Foundation
+import UIKit
 
-final class PostRouter: MainRouter<PostViewController>  {}
+final class PostRouter: MainRouter<UIViewController>  {}
 
 extension PostRouter: PostRoutingLogic {
     func needsClosing() {

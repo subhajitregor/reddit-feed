@@ -19,6 +19,7 @@ extension URLHost where Self: EndpointType {
         #if DEBUG
         return Self.staging
         #endif
+        return ""
     }
 }
 

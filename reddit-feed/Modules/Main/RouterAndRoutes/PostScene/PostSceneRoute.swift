@@ -8,21 +8,17 @@
 import Foundation
 
 protocol PostSceneRoute {
-    var postSceneTransition: Transition { get }
-    func openPostScene(dataProvider: PostDataProvider)
+    var openPostTransition: Transition { get set }
+    func openPostScene(transition: Transition, dataProvider: PostDataProvider)
 }
 
 extension PostSceneRoute where Self: RouterProtocol {
-    var postSceneTransition: Transition {
-        PushTransition()
-    }
-    
-    func openPostScene(dataProvider: PostDataProvider) {
+    func openPostScene(transition: Transition, dataProvider: PostDataProvider) {
         let router = PostRouter()
-        router.openTransition = postSceneTransition
+        router.openTransition = transition
         
         let viewController = PostBuilder(dataProvider: dataProvider, router: router).build()
-        open(viewController, transition: postSceneTransition)
+        open(viewController, transition: transition)
         
         router.rootController = viewController
     }
