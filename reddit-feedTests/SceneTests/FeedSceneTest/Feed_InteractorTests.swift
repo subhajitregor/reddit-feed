@@ -66,7 +66,12 @@ class Feed_InteractorTests: XCTestCase {
     
     func test_routeToDetail() {
         
-        let itemId = 1
+        let itemId = Feed.ViewModel.FeedPostVM(id: "", author: "",
+                                               imageThumbnailUrl: "",
+                                               originalImageURL: "",
+                                               title: "",
+                                               timestamp: Date())
+        
         sut.openDetailsView(for: itemId)
         
         XCTAssertEqual(router.routingCount, 1)
@@ -101,7 +106,7 @@ class Feed_InteractorTests: XCTestCase {
     class FeedRouterSpy: FeedRoutingLogic {
         var routingCount: Int = 0
         
-        func moveToDetail(with postId: Int) {
+        func moveToDetail(with post: Feed.ViewModel.FeedPostVM) {
             routingCount += 1
         }
     }

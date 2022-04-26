@@ -23,21 +23,23 @@ enum Feed {
 }
 
 extension Feed.ViewModel {
-    final class FeedPostVM {
+    struct FeedPostVM {
         var id: String
         var author: String
         var imageThumbnailUrl: String
         var originalImageURL: String
         var title: String
         var timestamp: Date
-        
-        init(from post: RedditFeed.FeedPost) {
-            id = post.id
-            author = post.author
-            imageThumbnailUrl = post.thumbnail
-            originalImageURL = post.originalImage
-            title = post.title
-            timestamp = post.createdAt
-        }
+    }
+}
+
+extension Feed.ViewModel.FeedPostVM {
+    init(from post: RedditFeed.FeedPost) {
+        id = post.id
+        author = post.author
+        imageThumbnailUrl = post.thumbnail
+        originalImageURL = post.originalImage
+        title = post.title
+        timestamp = post.createdAt
     }
 }

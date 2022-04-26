@@ -17,6 +17,7 @@ final class Cache<Key: Hashable, Value> {
          entryLifetime: TimeInterval = 12 * 60 * 60) {
         self.dateProvider = dateProvider
         self.entryLifetime = entryLifetime
+        wrapped.totalCostLimit = 50_000_000
     }
     
     func insert(_ value: Value, forKey key: Key) {

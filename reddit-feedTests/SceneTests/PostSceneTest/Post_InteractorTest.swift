@@ -12,8 +12,8 @@ class Post_InteractorTest: XCTestCase {
 
     var sut: PostInteractor!
     var presenter: PostPresenterSpy!
-    var dataProvider: DataProviderStub!
-    var emptyDataProvider: DataProviderStub!
+    var dataProvider: PostDataProviderStub!
+    var emptyDataProvider: PostDataProviderStub!
     var router: RouterSpy!
     
     // MARK: Lifecycle
@@ -23,12 +23,12 @@ class Post_InteractorTest: XCTestCase {
         
         presenter = PostPresenterSpy()
         router = RouterSpy()
-        dataProvider = DataProviderStub(timestamp: Date(),
+        dataProvider = PostDataProviderStub(timestamp: Date(),
                                         id: "_",
                                         title: "_",
                                         originalImageUrl: "_",
                                         author: "_")
-        emptyDataProvider = DataProviderStub(timestamp: Date(),
+        emptyDataProvider = PostDataProviderStub(timestamp: Date(),
                                              id: "",
                                              title: "",
                                              originalImageUrl: "",
@@ -80,13 +80,5 @@ class Post_InteractorTest: XCTestCase {
         func needsClosing() {
             isClosed += 1
         }
-    }
-    
-    struct DataProviderStub: PostDataProvider {
-        var timestamp: Date
-        var id: String
-        var title: String
-        var originalImageUrl: String
-        var author: String
     }
 }

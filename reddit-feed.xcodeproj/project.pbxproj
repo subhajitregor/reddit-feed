@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9F30DF522817519D0092B9C5 /* FeedSceneRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DF512817519D0092B9C5 /* FeedSceneRoute.swift */; };
+		9F30DF5528176F380092B9C5 /* PostDataProviderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DF5428176F380092B9C5 /* PostDataProviderStub.swift */; };
+		9F30DF59281772920092B9C5 /* Feed_RouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DF58281772920092B9C5 /* Feed_RouterTest.swift */; };
+		9F30DF5B2817932B0092B9C5 /* Post_RouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DF5A2817932B0092B9C5 /* Post_RouterTest.swift */; };
 		9F54B9AE2814B5F100EC9ECC /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9AD2814B5F100EC9ECC /* Cache.swift */; };
 		9F54B9BD2814C91100EC9ECC /* PostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9B62814C91100EC9ECC /* PostPresenter.swift */; };
 		9F54B9C02814C91100EC9ECC /* PostModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9B92814C91100EC9ECC /* PostModels.swift */; };
@@ -19,7 +22,6 @@
 		9F54B9CC281611B900EC9ECC /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F54B9CB281611B900EC9ECC /* Post.storyboard */; };
 		9F54B9D02816278500EC9ECC /* PostPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9CF2816278500EC9ECC /* PostPresenterSpy.swift */; };
 		9F54B9D328162A0500EC9ECC /* PostBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9D228162A0500EC9ECC /* PostBuilder.swift */; };
-		9F6222A62816F6430019BD6A /* Router_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6222A52816F6430019BD6A /* Router_Test.swift */; };
 		9F6222A82816F6BA0019BD6A /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6222A72816F6BA0019BD6A /* MainRouter.swift */; };
 		9F6222AB2816F8520019BD6A /* Tansition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6222AA2816F8520019BD6A /* Tansition.swift */; };
 		9F6222AE2816F9F40019BD6A /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6222AD2816F9F40019BD6A /* PushTransition.swift */; };
@@ -81,6 +83,9 @@
 
 /* Begin PBXFileReference section */
 		9F30DF512817519D0092B9C5 /* FeedSceneRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSceneRoute.swift; sourceTree = "<group>"; };
+		9F30DF5428176F380092B9C5 /* PostDataProviderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataProviderStub.swift; sourceTree = "<group>"; };
+		9F30DF58281772920092B9C5 /* Feed_RouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed_RouterTest.swift; sourceTree = "<group>"; };
+		9F30DF5A2817932B0092B9C5 /* Post_RouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post_RouterTest.swift; sourceTree = "<group>"; };
 		9F54B9AD2814B5F100EC9ECC /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		9F54B9B62814C91100EC9ECC /* PostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenter.swift; sourceTree = "<group>"; };
 		9F54B9B92814C91100EC9ECC /* PostModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModels.swift; sourceTree = "<group>"; };
@@ -92,7 +97,6 @@
 		9F54B9CB281611B900EC9ECC /* Post.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
 		9F54B9CF2816278500EC9ECC /* PostPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenterSpy.swift; sourceTree = "<group>"; };
 		9F54B9D228162A0500EC9ECC /* PostBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBuilder.swift; sourceTree = "<group>"; };
-		9F6222A52816F6430019BD6A /* Router_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router_Test.swift; sourceTree = "<group>"; };
 		9F6222A72816F6BA0019BD6A /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		9F6222AA2816F8520019BD6A /* Tansition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tansition.swift; sourceTree = "<group>"; };
 		9F6222AD2816F9F40019BD6A /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
@@ -165,6 +169,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F30DF5328176F1A0092B9C5 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				9F30DF5428176F380092B9C5 /* PostDataProviderStub.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
 		9F54B9AC2814B5E000EC9ECC /* CacheService */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,7 +200,6 @@
 		9F54B9C4281517A300EC9ECC /* PostSceneTest */ = {
 			isa = PBXGroup;
 			children = (
-				9F54B9CE2816276E00EC9ECC /* Mock */,
 				9F54B9C5281517CA00EC9ECC /* Post_InteractorTest.swift */,
 				9F54B9C72816077B00EC9ECC /* Post_PresenterTest.swift */,
 				9F54B9C928160D3700EC9ECC /* Post_VCTest.swift */,
@@ -215,7 +226,8 @@
 		9F6222A42816F6210019BD6A /* RouterTest */ = {
 			isa = PBXGroup;
 			children = (
-				9F6222A52816F6430019BD6A /* Router_Test.swift */,
+				9F30DF58281772920092B9C5 /* Feed_RouterTest.swift */,
+				9F30DF5A2817932B0092B9C5 /* Post_RouterTest.swift */,
 			);
 			path = RouterTest;
 			sourceTree = "<group>";
@@ -505,6 +517,8 @@
 		9FEE24842810EA8D000D5885 /* SceneTests */ = {
 			isa = PBXGroup;
 			children = (
+				9F30DF5328176F1A0092B9C5 /* Stubs */,
+				9F54B9CE2816276E00EC9ECC /* Mock */,
 				9F6222A42816F6210019BD6A /* RouterTest */,
 				9F54B9C4281517A300EC9ECC /* PostSceneTest */,
 				9FEE24832810EA6E000D5885 /* FeedSceneTest */,
@@ -747,11 +761,13 @@
 			files = (
 				9F54B9C6281517CA00EC9ECC /* Post_InteractorTest.swift in Sources */,
 				9FEE248B2810ECEA000D5885 /* ErrorSpy.swift in Sources */,
+				9F30DF5B2817932B0092B9C5 /* Post_RouterTest.swift in Sources */,
 				9F54B9CA28160D3700EC9ECC /* Post_VCTest.swift in Sources */,
+				9F30DF5528176F380092B9C5 /* PostDataProviderStub.swift in Sources */,
 				9F54B9D02816278500EC9ECC /* PostPresenterSpy.swift in Sources */,
-				9F6222A62816F6430019BD6A /* Router_Test.swift in Sources */,
 				9FEE24862810EAB7000D5885 /* Feed_PresenterTest.swift in Sources */,
 				9F54B9C82816077B00EC9ECC /* Post_PresenterTest.swift in Sources */,
+				9F30DF59281772920092B9C5 /* Feed_RouterTest.swift in Sources */,
 				9FEE246F28105390000D5885 /* Feed_InteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
