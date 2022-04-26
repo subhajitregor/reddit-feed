@@ -11,6 +11,7 @@
 		9F30DF5528176F380092B9C5 /* PostDataProviderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DF5428176F380092B9C5 /* PostDataProviderStub.swift */; };
 		9F30DF59281772920092B9C5 /* Feed_RouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DF58281772920092B9C5 /* Feed_RouterTest.swift */; };
 		9F30DF5B2817932B0092B9C5 /* Post_RouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DF5A2817932B0092B9C5 /* Post_RouterTest.swift */; };
+		9F30DFBF28189AF70092B9C5 /* Cache_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DFBE28189AF70092B9C5 /* Cache_Test.swift */; };
 		9F54B9AE2814B5F100EC9ECC /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9AD2814B5F100EC9ECC /* Cache.swift */; };
 		9F54B9BD2814C91100EC9ECC /* PostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9B62814C91100EC9ECC /* PostPresenter.swift */; };
 		9F54B9C02814C91100EC9ECC /* PostModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9B92814C91100EC9ECC /* PostModels.swift */; };
@@ -86,6 +87,7 @@
 		9F30DF5428176F380092B9C5 /* PostDataProviderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataProviderStub.swift; sourceTree = "<group>"; };
 		9F30DF58281772920092B9C5 /* Feed_RouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed_RouterTest.swift; sourceTree = "<group>"; };
 		9F30DF5A2817932B0092B9C5 /* Post_RouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post_RouterTest.swift; sourceTree = "<group>"; };
+		9F30DFBE28189AF70092B9C5 /* Cache_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache_Test.swift; sourceTree = "<group>"; };
 		9F54B9AD2814B5F100EC9ECC /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		9F54B9B62814C91100EC9ECC /* PostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenter.swift; sourceTree = "<group>"; };
 		9F54B9B92814C91100EC9ECC /* PostModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModels.swift; sourceTree = "<group>"; };
@@ -555,6 +557,7 @@
 		9FEE249E2811A86C000D5885 /* ServiceTest */ = {
 			isa = PBXGroup;
 			children = (
+				9F30DFBE28189AF70092B9C5 /* Cache_Test.swift */,
 			);
 			path = ServiceTest;
 			sourceTree = "<group>";
@@ -762,6 +765,7 @@
 				9F54B9C6281517CA00EC9ECC /* Post_InteractorTest.swift in Sources */,
 				9FEE248B2810ECEA000D5885 /* ErrorSpy.swift in Sources */,
 				9F30DF5B2817932B0092B9C5 /* Post_RouterTest.swift in Sources */,
+				9F30DFBF28189AF70092B9C5 /* Cache_Test.swift in Sources */,
 				9F54B9CA28160D3700EC9ECC /* Post_VCTest.swift in Sources */,
 				9F30DF5528176F380092B9C5 /* PostDataProviderStub.swift in Sources */,
 				9F54B9D02816278500EC9ECC /* PostPresenterSpy.swift in Sources */,
