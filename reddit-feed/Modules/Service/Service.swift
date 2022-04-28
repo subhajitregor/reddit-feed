@@ -7,14 +7,6 @@
 
 import Foundation
 
-protocol ServiceResponse {
-    associatedtype Response
-}
-
-extension ServiceResponse {
-    
-}
-
 protocol ServiceCancellable {
     func cancel()
 }

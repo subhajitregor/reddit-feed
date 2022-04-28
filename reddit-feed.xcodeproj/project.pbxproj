@@ -12,6 +12,14 @@
 		9F30DF59281772920092B9C5 /* Feed_RouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DF58281772920092B9C5 /* Feed_RouterTest.swift */; };
 		9F30DF5B2817932B0092B9C5 /* Post_RouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DF5A2817932B0092B9C5 /* Post_RouterTest.swift */; };
 		9F30DFBF28189AF70092B9C5 /* Cache_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DFBE28189AF70092B9C5 /* Cache_Test.swift */; };
+		9F30DFC32818CE950092B9C5 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DFC22818CE950092B9C5 /* LocalStore.swift */; };
+		9F30DFC62818E8A20092B9C5 /* reddit_feed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DFC42818E8A20092B9C5 /* reddit_feed.xcdatamodeld */; };
+		9F30DFCA281937770092B9C5 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DFC9281937770092B9C5 /* CoreDataStore.swift */; };
+		9F30DFCE281937BC0092B9C5 /* Favourites+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DFCC281937BC0092B9C5 /* Favourites+CoreDataClass.swift */; };
+		9F30DFCF281937BC0092B9C5 /* Favourites+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DFCD281937BC0092B9C5 /* Favourites+CoreDataProperties.swift */; };
+		9F30DFD5281949420092B9C5 /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DFD4281949420092B9C5 /* AppLogger.swift */; };
+		9F30DFD8281A0D840092B9C5 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DFD7281A0D840092B9C5 /* CoreData.swift */; };
+		9F30DFDB281A3FAF0092B9C5 /* StaticMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DFDA281A3FAE0092B9C5 /* StaticMessages.swift */; };
 		9F54B9AE2814B5F100EC9ECC /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9AD2814B5F100EC9ECC /* Cache.swift */; };
 		9F54B9BD2814C91100EC9ECC /* PostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9B62814C91100EC9ECC /* PostPresenter.swift */; };
 		9F54B9C02814C91100EC9ECC /* PostModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9B92814C91100EC9ECC /* PostModels.swift */; };
@@ -88,6 +96,14 @@
 		9F30DF58281772920092B9C5 /* Feed_RouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed_RouterTest.swift; sourceTree = "<group>"; };
 		9F30DF5A2817932B0092B9C5 /* Post_RouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post_RouterTest.swift; sourceTree = "<group>"; };
 		9F30DFBE28189AF70092B9C5 /* Cache_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache_Test.swift; sourceTree = "<group>"; };
+		9F30DFC22818CE950092B9C5 /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
+		9F30DFC52818E8A20092B9C5 /* reddit_feed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = reddit_feed.xcdatamodel; sourceTree = "<group>"; };
+		9F30DFC9281937770092B9C5 /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
+		9F30DFCC281937BC0092B9C5 /* Favourites+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favourites+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		9F30DFCD281937BC0092B9C5 /* Favourites+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favourites+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		9F30DFD4281949420092B9C5 /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
+		9F30DFD7281A0D840092B9C5 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		9F30DFDA281A3FAE0092B9C5 /* StaticMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticMessages.swift; sourceTree = "<group>"; };
 		9F54B9AD2814B5F100EC9ECC /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		9F54B9B62814C91100EC9ECC /* PostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenter.swift; sourceTree = "<group>"; };
 		9F54B9B92814C91100EC9ECC /* PostModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModels.swift; sourceTree = "<group>"; };
@@ -177,6 +193,73 @@
 				9F30DF5428176F380092B9C5 /* PostDataProviderStub.swift */,
 			);
 			path = Stubs;
+			sourceTree = "<group>";
+		};
+		9F30DFC12818B3FF0092B9C5 /* LocalStore */ = {
+			isa = PBXGroup;
+			children = (
+				9F30DFC22818CE950092B9C5 /* LocalStore.swift */,
+				9F30DFC72818EA7D0092B9C5 /* CoreData */,
+			);
+			path = LocalStore;
+			sourceTree = "<group>";
+		};
+		9F30DFC72818EA7D0092B9C5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9F30DFC42818E8A20092B9C5 /* reddit_feed.xcdatamodeld */,
+				9F30DFC9281937770092B9C5 /* CoreDataStore.swift */,
+				9F30DFC8281934790092B9C5 /* Entities */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		9F30DFC8281934790092B9C5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				9F30DFCB281937800092B9C5 /* Favourites */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		9F30DFCB281937800092B9C5 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				9F30DFCC281937BC0092B9C5 /* Favourites+CoreDataClass.swift */,
+				9F30DFCD281937BC0092B9C5 /* Favourites+CoreDataProperties.swift */,
+			);
+			path = Favourites;
+			sourceTree = "<group>";
+		};
+		9F30DFD2281949250092B9C5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9F30DFD3281949300092B9C5 /* AppLogger */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		9F30DFD3281949300092B9C5 /* AppLogger */ = {
+			isa = PBXGroup;
+			children = (
+				9F30DFD4281949420092B9C5 /* AppLogger.swift */,
+			);
+			path = AppLogger;
+			sourceTree = "<group>";
+		};
+		9F30DFD6281A0D740092B9C5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9F30DFD7281A0D840092B9C5 /* CoreData.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		9F30DFD9281A3AA10092B9C5 /* LocalStoreHelpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalStoreHelpers;
 			sourceTree = "<group>";
 		};
 		9F54B9AC2814B5E000EC9ECC /* CacheService */ = {
@@ -331,6 +414,7 @@
 		9FEE243628103B7C000D5885 /* reddit-feedTests */ = {
 			isa = PBXGroup;
 			children = (
+				9F30DFD6281A0D740092B9C5 /* CoreData */,
 				9FEE249E2811A86C000D5885 /* ServiceTest */,
 				9FEE24872810ECAE000D5885 /* CommonSpy */,
 				9FEE24842810EA8D000D5885 /* SceneTests */,
@@ -379,6 +463,7 @@
 				9FEE245828103F76000D5885 /* Main */,
 				9FEE245528103F59000D5885 /* Scenes */,
 				9FEE245728103F6C000D5885 /* Router */,
+				9F30DFC12818B3FF0092B9C5 /* LocalStore */,
 				9FEE245628103F63000D5885 /* Service */,
 				9FEE24AC2812213B000D5885 /* Entities */,
 			);
@@ -429,6 +514,7 @@
 		9FEE245828103F76000D5885 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				9F30DFD9281A3AA10092B9C5 /* LocalStoreHelpers */,
 				9F6222AF2816FA850019BD6A /* RouterAndRoutes */,
 				9FEE24A72811C18A000D5885 /* ServiceHelpers */,
 				9FEE245928103FC7000D5885 /* SceneBuilders */,
@@ -470,6 +556,7 @@
 		9FEE24772810DF04000D5885 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9F30DFD2281949250092B9C5 /* Utilities */,
 				9FEE247C2810DFD9000D5885 /* Constants */,
 				9FEE247B2810DFCA000D5885 /* Protocols */,
 				9FEE24782810DF0E000D5885 /* Extensions */,
@@ -503,6 +590,7 @@
 			children = (
 				9FEE247F2810E025000D5885 /* UIStoryboard+Constansts.swift */,
 				9FEE24A42811B910000D5885 /* URLHost.swift */,
+				9F30DFDA281A3FAE0092B9C5 /* StaticMessages.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -713,6 +801,7 @@
 				9F54B9C02814C91100EC9ECC /* PostModels.swift in Sources */,
 				9FEE246728104649000D5885 /* FeedPresenter.swift in Sources */,
 				9FEE249228113C66000D5885 /* InterfaceIdentifiable.swift in Sources */,
+				9F30DFDB281A3FAF0092B9C5 /* StaticMessages.swift in Sources */,
 				9FEE24972811A16A000D5885 /* ServiceRequestError.swift in Sources */,
 				9FEE24A32811B886000D5885 /* FeedEndpoint.swift in Sources */,
 				9F54B9BD2814C91100EC9ECC /* PostPresenter.swift in Sources */,
@@ -723,6 +812,7 @@
 				9F6222AE2816F9F40019BD6A /* PushTransition.swift in Sources */,
 				9FE7EB062813B2BE00F13B68 /* URLParameterEncoder.swift in Sources */,
 				9FEE248F2810FDB7000D5885 /* FeedPostTableViewCell.swift in Sources */,
+				9F30DFD5281949420092B9C5 /* AppLogger.swift in Sources */,
 				9F54B9D328162A0500EC9ECC /* PostBuilder.swift in Sources */,
 				9F54B9C12814C91100EC9ECC /* PostViewController.swift in Sources */,
 				9FEE242128103B7A000D5885 /* AppDelegate.swift in Sources */,
@@ -735,7 +825,9 @@
 				9F6222BC281707F10019BD6A /* AppRouter.swift in Sources */,
 				9FE7EB0A2813C62200F13B68 /* JSONParameterEncoder.swift in Sources */,
 				9FEE246A28104649000D5885 /* FeedModels.swift in Sources */,
+				9F30DFC62818E8A20092B9C5 /* reddit_feed.xcdatamodeld in Sources */,
 				9FE7EAFF28138C3D00F13B68 /* ImageRequestEndpoint.swift in Sources */,
+				9F30DFCF281937BC0092B9C5 /* Favourites+CoreDataProperties.swift in Sources */,
 				9F6222B72816FE790019BD6A /* FeedRouter.swift in Sources */,
 				9FEE249428117A74000D5885 /* UITableView+Extensions.swift in Sources */,
 				9FE7EB042813AEFC00F13B68 /* HTTPMethod.swift in Sources */,
@@ -743,11 +835,14 @@
 				9FE7EAEE281357CD00F13B68 /* DateFormatter+Extensions.swift in Sources */,
 				9FE7EAF028135EAC00F13B68 /* String+Extensions.swift in Sources */,
 				9FEE249D2811A6F5000D5885 /* Service.swift in Sources */,
+				9F30DFC32818CE950092B9C5 /* LocalStore.swift in Sources */,
+				9F30DFCE281937BC0092B9C5 /* Favourites+CoreDataClass.swift in Sources */,
 				9FEE24A52811B910000D5885 /* URLHost.swift in Sources */,
 				9FEE24B328126677000D5885 /* AttributedContainer+Extensions.swift in Sources */,
 				9FEE24992811A178000D5885 /* ServiceResponseError.swift in Sources */,
 				9F6222B92817066B0019BD6A /* PostSceneRoutingData.swift in Sources */,
 				9F54B9AE2814B5F100EC9ECC /* Cache.swift in Sources */,
+				9F30DFCA281937770092B9C5 /* CoreDataStore.swift in Sources */,
 				9FEE247A2810DF35000D5885 /* UIStoryboard+Extensions.swift in Sources */,
 				9FEE245B28103FE7000D5885 /* SceneBuilder.swift in Sources */,
 				9FEE245E2810406B000D5885 /* FeedBuilder.swift in Sources */,
@@ -766,6 +861,7 @@
 				9FEE248B2810ECEA000D5885 /* ErrorSpy.swift in Sources */,
 				9F30DF5B2817932B0092B9C5 /* Post_RouterTest.swift in Sources */,
 				9F30DFBF28189AF70092B9C5 /* Cache_Test.swift in Sources */,
+				9F30DFD8281A0D840092B9C5 /* CoreData.swift in Sources */,
 				9F54B9CA28160D3700EC9ECC /* Post_VCTest.swift in Sources */,
 				9F30DF5528176F380092B9C5 /* PostDataProviderStub.swift in Sources */,
 				9F54B9D02816278500EC9ECC /* PostPresenterSpy.swift in Sources */,
@@ -1049,6 +1145,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9F30DFC42818E8A20092B9C5 /* reddit_feed.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9F30DFC52818E8A20092B9C5 /* reddit_feed.xcdatamodel */,
+			);
+			currentVersion = 9F30DFC52818E8A20092B9C5 /* reddit_feed.xcdatamodel */;
+			path = reddit_feed.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9FEE241528103B7A000D5885 /* Project object */;
 }

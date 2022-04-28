@@ -19,10 +19,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwK-qo-prh">
-                                        <rect key="frame" x="8" y="8" width="398" height="464"/>
+                                        <rect key="frame" x="8" y="8" width="398" height="505"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="QRq-99-jq5">
-                                                <rect key="frame" x="0.0" y="0.0" width="398" height="464"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="398" height="505"/>
                                                 <subviews>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HxX-kq-caU">
                                                         <rect key="frame" x="0.0" y="0.0" width="398" height="398"/>
@@ -48,19 +48,27 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="z3G-F1-ph9">
-                                                        <rect key="frame" x="0.0" y="413" width="398" height="51"/>
+                                                        <rect key="frame" x="0.0" y="413" width="398" height="92"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VpS-8H-sgN">
-                                                                <rect key="frame" x="0.0" y="0.0" width="398" height="51"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="398" height="92"/>
                                                                 <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNh-sN-zvc">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="31"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="Button"/>
+                                                                        <connections>
+                                                                            <action selector="tappedFavouriteButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hle-9V-cI9"/>
+                                                                        </connections>
+                                                                    </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJX-KL-QB3">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="20.5"/>
+                                                                        <rect key="frame" x="0.0" y="41" width="398" height="20.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMO-Ew-e2t">
-                                                                        <rect key="frame" x="0.0" y="30.5" width="398" height="20.5"/>
+                                                                        <rect key="frame" x="0.0" y="71.5" width="398" height="20.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -107,6 +115,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="favouriteButton" destination="KNh-sN-zvc" id="geV-76-6LS"/>
                         <outlet property="postImageView" destination="3dG-5D-Os6" id="8OO-El-uVG"/>
                         <outlet property="timestampLabel" destination="eMO-Ew-e2t" id="M3E-64-kAj"/>
                         <outlet property="titleLabel" destination="hJX-KL-QB3" id="2kl-17-fHc"/>
