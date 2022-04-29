@@ -20,6 +20,10 @@
 		9F30DFD5281949420092B9C5 /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DFD4281949420092B9C5 /* AppLogger.swift */; };
 		9F30DFD8281A0D840092B9C5 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DFD7281A0D840092B9C5 /* CoreData.swift */; };
 		9F30DFDB281A3FAF0092B9C5 /* StaticMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DFDA281A3FAE0092B9C5 /* StaticMessages.swift */; };
+		9F30DFDD281A4EA00092B9C5 /* PostLocalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DFDC281A4EA00092B9C5 /* PostLocalDataService.swift */; };
+		9F30DFE1281A4F890092B9C5 /* SingleFavouriteFetchOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DFE0281A4F890092B9C5 /* SingleFavouriteFetchOperation.swift */; };
+		9F30DFE3281A62020092B9C5 /* WrappedMangedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DFE2281A62020092B9C5 /* WrappedMangedObject.swift */; };
+		9F30DFE5281A6B030092B9C5 /* InsertFavouriteOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30DFE4281A6B030092B9C5 /* InsertFavouriteOperation.swift */; };
 		9F54B9AE2814B5F100EC9ECC /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9AD2814B5F100EC9ECC /* Cache.swift */; };
 		9F54B9BD2814C91100EC9ECC /* PostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9B62814C91100EC9ECC /* PostPresenter.swift */; };
 		9F54B9C02814C91100EC9ECC /* PostModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B9B92814C91100EC9ECC /* PostModels.swift */; };
@@ -104,6 +108,10 @@
 		9F30DFD4281949420092B9C5 /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
 		9F30DFD7281A0D840092B9C5 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		9F30DFDA281A3FAE0092B9C5 /* StaticMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticMessages.swift; sourceTree = "<group>"; };
+		9F30DFDC281A4EA00092B9C5 /* PostLocalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLocalDataService.swift; sourceTree = "<group>"; };
+		9F30DFE0281A4F890092B9C5 /* SingleFavouriteFetchOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleFavouriteFetchOperation.swift; sourceTree = "<group>"; };
+		9F30DFE2281A62020092B9C5 /* WrappedMangedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedMangedObject.swift; sourceTree = "<group>"; };
+		9F30DFE4281A6B030092B9C5 /* InsertFavouriteOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertFavouriteOperation.swift; sourceTree = "<group>"; };
 		9F54B9AD2814B5F100EC9ECC /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		9F54B9B62814C91100EC9ECC /* PostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenter.swift; sourceTree = "<group>"; };
 		9F54B9B92814C91100EC9ECC /* PostModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModels.swift; sourceTree = "<group>"; };
@@ -209,6 +217,7 @@
 			children = (
 				9F30DFC42818E8A20092B9C5 /* reddit_feed.xcdatamodeld */,
 				9F30DFC9281937770092B9C5 /* CoreDataStore.swift */,
+				9F30DFE2281A62020092B9C5 /* WrappedMangedObject.swift */,
 				9F30DFC8281934790092B9C5 /* Entities */,
 			);
 			path = CoreData;
@@ -258,8 +267,27 @@
 		9F30DFD9281A3AA10092B9C5 /* LocalStoreHelpers */ = {
 			isa = PBXGroup;
 			children = (
+				9F30DFDF281A4F2B0092B9C5 /* StoreOperations */,
+				9F30DFDE281A4F190092B9C5 /* StoreService */,
 			);
 			path = LocalStoreHelpers;
+			sourceTree = "<group>";
+		};
+		9F30DFDE281A4F190092B9C5 /* StoreService */ = {
+			isa = PBXGroup;
+			children = (
+				9F30DFDC281A4EA00092B9C5 /* PostLocalDataService.swift */,
+			);
+			path = StoreService;
+			sourceTree = "<group>";
+		};
+		9F30DFDF281A4F2B0092B9C5 /* StoreOperations */ = {
+			isa = PBXGroup;
+			children = (
+				9F30DFE0281A4F890092B9C5 /* SingleFavouriteFetchOperation.swift */,
+				9F30DFE4281A6B030092B9C5 /* InsertFavouriteOperation.swift */,
+			);
+			path = StoreOperations;
 			sourceTree = "<group>";
 		};
 		9F54B9AC2814B5E000EC9ECC /* CacheService */ = {
@@ -818,6 +846,7 @@
 				9FEE242128103B7A000D5885 /* AppDelegate.swift in Sources */,
 				9F6222BE281708590019BD6A /* EmptyTransition.swift in Sources */,
 				9FEE24B128122242000D5885 /* FeedPost.swift in Sources */,
+				9F30DFE1281A4F890092B9C5 /* SingleFavouriteFetchOperation.swift in Sources */,
 				9FE7EB082813B72500F13B68 /* ParameterEncoder.swift in Sources */,
 				9FEE24B528126910000D5885 /* Date+Extensions.swift in Sources */,
 				9FE7EAFD28138C0900F13B68 /* ImageService.swift in Sources */,
@@ -835,16 +864,19 @@
 				9FE7EAEE281357CD00F13B68 /* DateFormatter+Extensions.swift in Sources */,
 				9FE7EAF028135EAC00F13B68 /* String+Extensions.swift in Sources */,
 				9FEE249D2811A6F5000D5885 /* Service.swift in Sources */,
+				9F30DFE3281A62020092B9C5 /* WrappedMangedObject.swift in Sources */,
 				9F30DFC32818CE950092B9C5 /* LocalStore.swift in Sources */,
 				9F30DFCE281937BC0092B9C5 /* Favourites+CoreDataClass.swift in Sources */,
 				9FEE24A52811B910000D5885 /* URLHost.swift in Sources */,
 				9FEE24B328126677000D5885 /* AttributedContainer+Extensions.swift in Sources */,
 				9FEE24992811A178000D5885 /* ServiceResponseError.swift in Sources */,
 				9F6222B92817066B0019BD6A /* PostSceneRoutingData.swift in Sources */,
+				9F30DFDD281A4EA00092B9C5 /* PostLocalDataService.swift in Sources */,
 				9F54B9AE2814B5F100EC9ECC /* Cache.swift in Sources */,
 				9F30DFCA281937770092B9C5 /* CoreDataStore.swift in Sources */,
 				9FEE247A2810DF35000D5885 /* UIStoryboard+Extensions.swift in Sources */,
 				9FEE245B28103FE7000D5885 /* SceneBuilder.swift in Sources */,
+				9F30DFE5281A6B030092B9C5 /* InsertFavouriteOperation.swift in Sources */,
 				9FEE245E2810406B000D5885 /* FeedBuilder.swift in Sources */,
 				9F54B9C32814C91100EC9ECC /* PostInteractor.swift in Sources */,
 				9FEE24802810E025000D5885 /* UIStoryboard+Constansts.swift in Sources */,

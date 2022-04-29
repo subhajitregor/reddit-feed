@@ -14,7 +14,7 @@ class CoreDataStore: LocalStore {
     
     private(set) var modelName: String = "reddit_feed"
     
-    private let logger = AppLogger(category: .dataStore)
+    let logger = AppLogger(category: .dataStore)
     
     private(set) lazy var mainContext: NSManagedObjectContext = storeContainer.viewContext
     
@@ -34,13 +34,13 @@ class CoreDataStore: LocalStore {
     }()
     
     
-    func loadObjects<T: NSManagedObject>(_ objects : T.Type) throws -> [T] {
-        let request = objects.fetchRequest()
+    func loadObjects<T: ManagedObject>(_ objects : T.Type) throws -> [T] {
+        let request = objects.createFetchRequest()
         return try mainContext.fetch(request) as? [T] ?? []
     }
     
-    func loadObject<T: NSManagedObject>(_ object: T.Type, upon key: String, value: String) throws -> T? {
-        let request = object.fetchRequest()
+    func loadObject<T: ManagedObject>(_ object: T.Type, upon key: String, value: String) throws -> T? {
+        let request = object.createFetchRequest()
         request.predicate = NSPredicate(format: "\(key) == %@", value)
         request.fetchLimit = 1
         let objects = try mainContext.fetch(request) as? [T]

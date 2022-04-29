@@ -52,7 +52,36 @@ final class PostInteractor {
 
 extension PostInteractor: PostBusinessLogic {
     func start() {
+        self.startFetch()
+    }
+    
+    func closeScene() {
+        router.needsClosing()
+    }
+    
+    func userActionOnFavourite(for post: Post.FeedPost.ViewModel) {
+        if post.isFavourite {
+            // TODO: Remove from favourite
+        } else {
+            localStore.addPostToFavourite(id: post.id) { [weak self] result in
+                guard let `self` = self else { return }
+                switch result {
+                case .success:
+                    self.startFetch(needed: false, isFavourite: true)
+                    self.presenter.presentSuccessAlert(with: StaticMessages.Post.FavouriteMessages.added)
+                case .failure(let error):
+                    self.presenter.presentFailure(error: error)
+                }
+            }
+        }
+        
+    }
+}
+
+private extension PostInteractor {
+    func startFetch(needed fetch: Bool = true, isFavourite: Bool = false) {
         guard let dataProvider = dataProvider,
+              !dataProvider.id.isEmpty,
             !dataProvider.title.isEmpty,
               !dataProvider.originalImageUrl.isEmpty,
               !dataProvider.author.isEmpty
@@ -61,31 +90,27 @@ extension PostInteractor: PostBusinessLogic {
             presenter.presentFailure(error: error)
             return
         }
-        // TODO: Check for favourite
-        let model = Post.FeedPost.Model(id: dataProvider.id,
-                                        originalImageUrl: dataProvider.originalImageUrl,
-                                        title: dataProvider.title,
-                                        author: dataProvider.author,
-                                        timestamp: dataProvider.timestamp,
-                                        isFavourite: true)
+        
+        var model: Post.FeedPost.Model
+        
+        if fetch {
+            let isPostFavourite = localStore.isPostFavourite(id: dataProvider.id)
+            model = createModel(as: isPostFavourite, from: dataProvider)
+            
+        } else {
+            model = createModel(as: isFavourite, from: dataProvider)
+        }
         
         presenter.presentPost(response: model)
+
     }
     
-    func closeScene() {
-        router.needsClosing()
-    }
-    
-    func userActionOnFavourite(for post: Post.FeedPost.ViewModel) {
-        
-        localStore.addPostToFavourite(id: post.id) { [weak self] result in
-            guard let `self` = self else { return }
-            switch result {
-            case .success:
-                self.presenter.presentSuccessAlert(with: StaticMessages.Post.FavouriteMessages.added)
-            case .failure(let error):
-                self.presenter.presentFailure(error: error)
-            }
-        }
+    func createModel(as favourite: Bool, from dataProvider: PostDataProvider) -> Post.FeedPost.Model {
+        Post.FeedPost.Model(id: dataProvider.id,
+                            originalImageUrl: dataProvider.originalImageUrl,
+                            title: dataProvider.title,
+                            author: dataProvider.author,
+                            timestamp: dataProvider.timestamp,
+                            isFavourite: favourite)
     }
 }

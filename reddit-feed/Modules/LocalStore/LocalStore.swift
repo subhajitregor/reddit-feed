@@ -11,8 +11,8 @@ import CoreData
 
 
 protocol LocalStoreReadable {
-    func loadObjects<T: NSManagedObject>(_ objects : T.Type) throws -> [T]
-    func loadObject<T: NSManagedObject>(_ object: T.Type, upon key: String, value: String) throws -> T?
+    func loadObjects<T: ManagedObject>(_ objects : T.Type) throws -> [T]
+    func loadObject<T: ManagedObject>(_ object: T.Type, upon key: String, value: String) throws -> T?
 }
 
 protocol LocalStoreWritable {

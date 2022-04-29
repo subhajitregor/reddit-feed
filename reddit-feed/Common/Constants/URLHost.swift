@@ -18,8 +18,9 @@ extension URLHost where Self: EndpointType {
     var baseURL: String {
         #if DEBUG
         return Self.staging
-        #endif
+        #else
         return ""
+        #endif
     }
 }
 

@@ -15,12 +15,14 @@ class Post_InteractorTest: XCTestCase {
     var dataProvider: PostDataProviderStub!
     var emptyDataProvider: PostDataProviderStub!
     var router: RouterSpy!
+    var localStore: StoreSpy!
     
     // MARK: Lifecycle
     
     override func setUp() {
         super.setUp()
         
+        localStore = StoreSpy()
         presenter = PostPresenterSpy()
         router = RouterSpy()
         dataProvider = PostDataProviderStub(timestamp: Date(),
@@ -40,6 +42,7 @@ class Post_InteractorTest: XCTestCase {
         sut = nil
         presenter = nil
         dataProvider = nil
+        localStore = nil
         
         super.tearDown()
     }
@@ -71,7 +74,7 @@ class Post_InteractorTest: XCTestCase {
     // MARK: Helpers
     
     func makeSUT() -> PostInteractor {
-        PostInteractor(presenter: presenter, router: router)
+        PostInteractor(presenter: presenter, router: router, localStore: localStore)
     }
     
     class RouterSpy: PostRoutingLogic {
@@ -79,6 +82,16 @@ class Post_InteractorTest: XCTestCase {
         
         func needsClosing() {
             isClosed += 1
+        }
+    }
+    
+    class StoreSpy: PostLocalStore {
+        func addPostToFavourite(id: String, done: @escaping (Result<Bool, Error>) -> Void) {
+            
+        }
+        
+        func isPostFavourite(id: String) -> Bool {
+            false
         }
     }
 }

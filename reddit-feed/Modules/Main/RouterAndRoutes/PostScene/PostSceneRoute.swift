@@ -26,14 +26,3 @@ extension PostSceneRoute where Self: RouterProtocol {
 
 // TODO: Move to proper unit
 
-final class PostLocalDataService: PostLocalStore {
-    func addPostToFavourite(id: String, done: @escaping (Result<Bool, Error>) -> Void) {
-        
-    }
-    
-    func isPostFavourite(id: String) -> Bool {
-        false
-    }
-    
-    
-}
