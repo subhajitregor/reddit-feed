@@ -9,6 +9,7 @@ import Foundation
 @testable import reddit_feed
 
 class PostPresenterSpy: PostPresentationLogic {
+    var alertPresented: Int = 0
     var presented: Int = 0
     var failed: Int = 0
     
@@ -22,11 +23,15 @@ class PostPresenterSpy: PostPresentationLogic {
         failed += 1
     }
     
+    func presentSuccessAlert(with message: String) {
+        alertPresented += 1
+    }
+    
     func sendToDisplay(props: PostDetailProps) {
-        let vm = Post.FeedPost.ViewModel(originalImageUrl: "",
+        let vm = Post.FeedPost.ViewModel(id: "", originalImageUrl: "",
                                 title: props.title,
                                 author: props.author,
-                                timestamp: props.timeStamp)
+                                         timestamp: props.timeStamp, isFavourite: false)
         viewController.displayPost(viewModel: vm)
     }
 }

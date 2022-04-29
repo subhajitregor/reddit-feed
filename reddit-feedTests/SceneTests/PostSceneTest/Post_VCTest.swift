@@ -83,6 +83,8 @@ class Post_VCTest: XCTestCase {
     
     class InteractorSpy: PostBusinessLogic {
         
+        
+        
         var startCalled: Int = 0
         var closeCalled: Int = 0
         
@@ -97,6 +99,10 @@ class Post_VCTest: XCTestCase {
         
         func closeScene() {
             closeCalled += 1
+        }
+        
+        func userActionOnFavourite(for post: Post.FeedPost.ViewModel) {
+            
         }
     }
 }

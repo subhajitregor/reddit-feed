@@ -58,9 +58,10 @@ class Post_PresenterTest: XCTestCase {
     }
     
     func makeFeedPostModel() -> Post.FeedPost.Model {
-        Post.FeedPost.Model(originalImageUrl: "_",
+        Post.FeedPost.Model(id: "_", originalImageUrl: "_",
                             title: "_",
                             author: "_",
-                            timestamp: Date())
+                            timestamp: Date(),
+                            isFavourite: false)
     }
 }

@@ -17,10 +17,12 @@ extension PostSceneRoute where Self: RouterProtocol {
         let router = PostRouter()
         router.openTransition = transition
         
-        let viewController = PostBuilder(dataProvider: dataProvider, router: router).build()
+        let viewController = PostBuilder(dataProvider: dataProvider, router: router, localStore: PostLocalDataService()).build()
         open(viewController, transition: transition)
         
         router.rootController = viewController
     }
 }
+
+// TODO: Move to proper unit
 
